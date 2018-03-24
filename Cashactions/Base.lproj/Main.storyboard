@@ -52,7 +52,7 @@
         <!--Transactions-->
         <scene sceneID="R92-6i-TtK">
             <objects>
-                <viewController id="X5l-a3-WDY" sceneMemberID="viewController">
+                <viewController id="X5l-a3-WDY" customClass="TransactionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cw4-9k-xgl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,7 @@
         <!--Home-->
         <scene sceneID="VHI-Yh-ACN">
             <objects>
-                <viewController id="k13-4U-ix3" sceneMemberID="viewController">
+                <viewController id="k13-4U-ix3" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9eS-aS-pmn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
