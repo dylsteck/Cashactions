@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="2102" y="463"/>
         </scene>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="VHI-Yh-ACN">
             <objects>
                 <viewController id="k13-4U-ix3" sceneMemberID="viewController">
@@ -104,7 +104,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gO6-Ie-hEf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Muf-by-HRA"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="Muf-by-HRA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aox-5Q-KLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

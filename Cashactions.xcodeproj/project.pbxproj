@@ -15,6 +15,10 @@
 		FCC08E942065E5A700D8BE4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC08E922065E5A700D8BE4F /* LaunchScreen.storyboard */; };
 		FCC08E9F2065E5A700D8BE4F /* CashactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC08E9E2065E5A700D8BE4F /* CashactionsTests.swift */; };
 		FCC08EAA2065E5A700D8BE4F /* CashactionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC08EA92065E5A700D8BE4F /* CashactionsUITests.swift */; };
+		FCC08EC12065EC5B00D8BE4F /* icons8-roofing.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC08EBE2065EC5A00D8BE4F /* icons8-roofing.png */; };
+		FCC08EC22065EC5B00D8BE4F /* icons8-cash.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC08EBF2065EC5B00D8BE4F /* icons8-cash.png */; };
+		FCC08EC32065EC5B00D8BE4F /* icons8-cottage.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC08EC02065EC5B00D8BE4F /* icons8-cottage.png */; };
+		FCC08EC52066A36700D8BE4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC08EC42066A36700D8BE4F /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		FCC08EA52065E5A700D8BE4F /* CashactionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashactionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC08EA92065E5A700D8BE4F /* CashactionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashactionsUITests.swift; sourceTree = "<group>"; };
 		FCC08EAB2065E5A700D8BE4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCC08EBE2065EC5A00D8BE4F /* icons8-roofing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-roofing.png"; sourceTree = "<group>"; };
+		FCC08EBF2065EC5B00D8BE4F /* icons8-cash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-cash.png"; sourceTree = "<group>"; };
+		FCC08EC02065EC5B00D8BE4F /* icons8-cottage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-cottage.png"; sourceTree = "<group>"; };
+		FCC08EC42066A36700D8BE4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +107,9 @@
 		FCC08E852065E5A700D8BE4F /* Cashactions */ = {
 			isa = PBXGroup;
 			children = (
+				FCC08EC62066A36F00D8BE4F /* controllers */,
+				FCC08EB72065EC1100D8BE4F /* images */,
 				FCC08E862065E5A700D8BE4F /* AppDelegate.swift */,
-				FCC08E882065E5A700D8BE4F /* ViewController.swift */,
 				FCC08E8A2065E5A700D8BE4F /* Main.storyboard */,
 				FCC08E902065E5A700D8BE4F /* Assets.xcassets */,
 				FCC08E922065E5A700D8BE4F /* LaunchScreen.storyboard */,
@@ -126,6 +135,26 @@
 				FCC08EAB2065E5A700D8BE4F /* Info.plist */,
 			);
 			path = CashactionsUITests;
+			sourceTree = "<group>";
+		};
+		FCC08EB72065EC1100D8BE4F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FCC08EBF2065EC5B00D8BE4F /* icons8-cash.png */,
+				FCC08EC02065EC5B00D8BE4F /* icons8-cottage.png */,
+				FCC08EBE2065EC5A00D8BE4F /* icons8-roofing.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		FCC08EC62066A36F00D8BE4F /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCC08E882065E5A700D8BE4F /* ViewController.swift */,
+				FCC08EC42066A36700D8BE4F /* HomeViewController.swift */,
+			);
+			name = controllers;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC08E942065E5A700D8BE4F /* LaunchScreen.storyboard in Resources */,
+				FCC08EC32065EC5B00D8BE4F /* icons8-cottage.png in Resources */,
 				FCC08E912065E5A700D8BE4F /* Assets.xcassets in Resources */,
+				FCC08EC22065EC5B00D8BE4F /* icons8-cash.png in Resources */,
+				FCC08EC12065EC5B00D8BE4F /* icons8-roofing.png in Resources */,
 				FCC08E8C2065E5A700D8BE4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +297,7 @@
 				FCC08E892065E5A700D8BE4F /* ViewController.swift in Sources */,
 				FCC08E872065E5A700D8BE4F /* AppDelegate.swift in Sources */,
 				FCC08E8F2065E5A700D8BE4F /* Cashactions.xcdatamodeld in Sources */,
+				FCC08EC52066A36700D8BE4F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
