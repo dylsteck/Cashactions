@@ -8,10 +8,14 @@
 
 import UIKit
 import CoreData
+import ChameleonFramework
 
 class HomeViewController: UIViewController {
     var cash: [Int32] = []
     
+    var powderAsh = UIColor(red:0.73, green:0.78, blue:0.75, alpha:1.0)
+    var seaMist = UIColor(red:0.76, green:0.88, blue:0.76, alpha:1.0)
+    @IBOutlet weak var cashView: UIView!
     @IBOutlet weak var cashTextField: UITextField!
     @IBOutlet weak var cashButton: UIButton!
     //    var people: Int32  = []
@@ -19,6 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(cash)
+        cashView.backgroundColor = GradientColor(.leftToRight, frame: view.frame, colors: [powderAsh, seaMist])
         // Do any additional setup after loading the view, typically from a nib.
     }
 

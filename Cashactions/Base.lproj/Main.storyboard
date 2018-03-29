@@ -136,6 +136,7 @@
                     <connections>
                         <outlet property="cashButton" destination="HxI-Sd-B9q" id="rfW-6D-E80"/>
                         <outlet property="cashTextField" destination="04u-Jp-AxX" id="jMo-nE-QuM"/>
+                        <outlet property="cashView" destination="Wox-12-5Yd" id="Ptv-RW-SUW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aox-5Q-KLX" userLabel="First Responder" sceneMemberID="firstResponder"/>

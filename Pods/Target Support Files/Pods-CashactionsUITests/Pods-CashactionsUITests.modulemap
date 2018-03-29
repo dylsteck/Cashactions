@@ -1,0 +1,6 @@
+framework module Pods_CashactionsUITests {
+  umbrella header "Pods-CashactionsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
