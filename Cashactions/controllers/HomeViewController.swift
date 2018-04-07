@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     var powderAsh = UIColor(red:0.73, green:0.78, blue:0.75, alpha:1.0)
     var seaMist = UIColor(red:0.76, green:0.88, blue:0.76, alpha:1.0)
     @IBOutlet weak var cashView: UIView!
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var cashTextField: UITextField!
     @IBOutlet weak var cashButton: UIButton!
     //    var people: Int32  = []

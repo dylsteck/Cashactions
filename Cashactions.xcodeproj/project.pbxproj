@@ -10,8 +10,10 @@
 		18D753677B9DFB3822D8681F /* Pods_Cashactions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4114D732ED685141537D52EF /* Pods_Cashactions.framework */; };
 		9AB103FC147B6AE036C42653 /* Pods_CashactionsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64C3927DE5B2713C13CDBE /* Pods_CashactionsUITests.framework */; };
 		CE93585ABC2D86854CFE19C5 /* Pods_CashactionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9841FC2D41A6D529BBECAA6 /* Pods_CashactionsTests.framework */; };
-		FC4F6B2A2069A72600BA211B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4F6B272069A72600BA211B /* ViewController.swift */; };
-		FC4F6B2B2069A72600BA211B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4F6B282069A72600BA211B /* HomeViewController.swift */; };
+		FC76B8122079134500E2B1F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B80F2079134500E2B1F3 /* LoginViewController.swift */; };
+		FC76B8132079134500E2B1F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B8102079134500E2B1F3 /* HomeViewController.swift */; };
+		FC76B8142079134500E2B1F3 /* InitialBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */; };
+		FC76B818207916B000E2B1F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC76B817207916AF00E2B1F3 /* GoogleService-Info.plist */; };
 		FCC08E872065E5A700D8BE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC08E862065E5A700D8BE4F /* AppDelegate.swift */; };
 		FCC08E8C2065E5A700D8BE4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC08E8A2065E5A700D8BE4F /* Main.storyboard */; };
 		FCC08E8F2065E5A700D8BE4F /* Cashactions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCC08E8D2065E5A700D8BE4F /* Cashactions.xcdatamodeld */; };
@@ -51,8 +53,10 @@
 		AC4A512F1496ED93ECA5B0B9 /* Pods-Cashactions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashactions.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cashactions/Pods-Cashactions.release.xcconfig"; sourceTree = "<group>"; };
 		C9841FC2D41A6D529BBECAA6 /* Pods_CashactionsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashactionsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD64C3927DE5B2713C13CDBE /* Pods_CashactionsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashactionsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC4F6B272069A72600BA211B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FC4F6B282069A72600BA211B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FC76B80F2079134500E2B1F3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FC76B8102079134500E2B1F3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialBalanceViewController.swift; sourceTree = "<group>"; };
+		FC76B817207916AF00E2B1F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCC08E832065E5A700D8BE4F /* Cashactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC08E862065E5A700D8BE4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC08E8B2065E5A700D8BE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,8 +129,9 @@
 		FC4F6B262069A72600BA211B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FC4F6B272069A72600BA211B /* ViewController.swift */,
-				FC4F6B282069A72600BA211B /* HomeViewController.swift */,
+				FC76B8102079134500E2B1F3 /* HomeViewController.swift */,
+				FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */,
+				FC76B80F2079134500E2B1F3 /* LoginViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				FCC08E902065E5A700D8BE4F /* Assets.xcassets */,
 				FCC08E922065E5A700D8BE4F /* LaunchScreen.storyboard */,
 				FCC08E952065E5A700D8BE4F /* Info.plist */,
+				FC76B817207916AF00E2B1F3 /* GoogleService-Info.plist */,
 				FCC08E8D2065E5A700D8BE4F /* Cashactions.xcdatamodeld */,
 			);
 			path = Cashactions;
@@ -318,6 +324,7 @@
 				FCC08EC22065EC5B00D8BE4F /* icons8-cash.png in Resources */,
 				FCC08EC12065EC5B00D8BE4F /* icons8-roofing.png in Resources */,
 				FCC08E8C2065E5A700D8BE4F /* Main.storyboard in Resources */,
+				FC76B818207916B000E2B1F3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,10 +434,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cashactions/Pods-Cashactions-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -492,10 +503,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC4F6B2A2069A72600BA211B /* ViewController.swift in Sources */,
+				FC76B8122079134500E2B1F3 /* LoginViewController.swift in Sources */,
 				FCC08E872065E5A700D8BE4F /* AppDelegate.swift in Sources */,
 				FCC08E8F2065E5A700D8BE4F /* Cashactions.xcdatamodeld in Sources */,
-				FC4F6B2B2069A72600BA211B /* HomeViewController.swift in Sources */,
+				FC76B8142079134500E2B1F3 /* InitialBalanceViewController.swift in Sources */,
+				FC76B8132079134500E2B1F3 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +678,7 @@
 				DEVELOPMENT_TEAM = JTL74VZ4WQ;
 				INFOPLIST_FILE = Cashactions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DylanSteck.Cashactions;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylansteck.cashactions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,7 +694,7 @@
 				DEVELOPMENT_TEAM = JTL74VZ4WQ;
 				INFOPLIST_FILE = Cashactions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DylanSteck.Cashactions;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylansteck.cashactions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
