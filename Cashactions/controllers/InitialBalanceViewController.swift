@@ -9,13 +9,18 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import FirebaseDatabase
 
 class InitialBalanceViewController: UIViewController {
     var firebaseAuth = Auth.auth()
+    var ref: DatabaseReference!
     @IBOutlet weak var initialBalanceTextField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(firebaseAuth.currentUser?.displayName as! String)
+        ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
 
@@ -26,11 +31,7 @@ class InitialBalanceViewController: UIViewController {
     
 
     @IBAction func addInitialBalance(_ sender: Any) {
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
+        self.ref.child("transactions").setValue(["balance": initialBalanceTextField.text, "title": "Initial Balance"])
     } //end of IBAction
     
     /*

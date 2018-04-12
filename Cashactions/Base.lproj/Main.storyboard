@@ -42,7 +42,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUp:" destination="3Af-uR-KbT" eventType="touchUpInside" id="Rcm-4Y-568"/>
-                                    <segue destination="WWT-PR-pEN" kind="show" id="q0Y-bO-NOo"/>
+                                    <segue destination="WWT-PR-pEN" kind="show" identifier="signUpSegue" id="q0Y-bO-NOo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNt-EY-ACC">
@@ -50,6 +50,7 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logIn:" destination="3Af-uR-KbT" eventType="touchUpInside" id="xKn-CR-eI1"/>
+                                    <segue destination="bcO-vw-J6E" kind="show" identifier="loginSegue" id="viX-of-fl8"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="38l-Ay-rk0">
@@ -135,6 +136,7 @@
                     </view>
                     <connections>
                         <outlet property="initialBalanceTextField" destination="M6y-oO-ZfN" id="Atl-QU-wHF"/>
+                        <outlet property="titleLabel" destination="YHy-oI-qov" id="tId-Hf-xoi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxF-Db-2tH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,4 +239,7 @@
             <point key="canvasLocation" x="1495" y="34"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4r4-28-ayH"/>
+    </inferredMetricsTieBreakers>
 </document>

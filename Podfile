@@ -9,6 +9,7 @@ target 'Cashactions' do
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   target 'CashactionsTests' do
     inherit! :search_paths
     # Pods for testing
