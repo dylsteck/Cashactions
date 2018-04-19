@@ -13,13 +13,16 @@ import FirebaseDatabase
 
 class InitialBalanceViewController: UIViewController {
     var firebaseAuth = Auth.auth()
-    var ref: DatabaseReference!
+    var ref = Database.database().reference(withPath: "transactions")
+    var transactions: [Transaction] = []
+    var userID = Auth.auth().currentUser?.uid
+    var email = Auth.auth().currentUser?.email
     @IBOutlet weak var initialBalanceTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(firebaseAuth.currentUser?.displayName as! String)
+        print(firebaseAuth.currentUser?.email as! String)
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
@@ -31,7 +34,10 @@ class InitialBalanceViewController: UIViewController {
     
 
     @IBAction func addInitialBalance(_ sender: Any) {
-        self.ref.child("transactions").setValue(["balance": initialBalanceTextField.text, "title": "Initial Balance"])
+        let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Initial Transaction", addedByUser: (email!))
+        let transactionRef = self.ref.child("transactions").child(userID!).child("Initial Transaction")
+        
+        transactionRef.setValue(transaction.toAnyObject())
     } //end of IBAction
     
     /*

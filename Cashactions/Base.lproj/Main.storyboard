@@ -53,21 +53,13 @@
                                     <segue destination="bcO-vw-J6E" kind="show" identifier="loginSegue" id="viX-of-fl8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="38l-Ay-rk0">
-                                <rect key="frame" x="145" y="139.5" width="85.5" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8qs-SS-bPK" firstAttribute="centerX" secondItem="SlR-7f-bor" secondAttribute="centerX" id="1Qc-rY-8OC"/>
                             <constraint firstItem="dFK-oO-DYB" firstAttribute="centerX" secondItem="SlR-7f-bor" secondAttribute="centerX" id="Q9z-kt-v9p"/>
-                            <constraint firstItem="38l-Ay-rk0" firstAttribute="centerX" secondItem="SlR-7f-bor" secondAttribute="centerX" id="UOd-0K-gVQ"/>
                             <constraint firstItem="8qs-SS-bPK" firstAttribute="centerY" secondItem="SlR-7f-bor" secondAttribute="centerY" multiplier="0.9" id="dku-UI-jdT"/>
                             <constraint firstItem="iNt-EY-ACC" firstAttribute="centerX" secondItem="SlR-7f-bor" secondAttribute="centerX" id="hzd-bi-8NZ"/>
-                            <constraint firstItem="38l-Ay-rk0" firstAttribute="centerY" secondItem="SlR-7f-bor" secondAttribute="centerY" multiplier="0.45" id="ku0-vY-jZZ"/>
                             <constraint firstItem="0Cm-pc-9eK" firstAttribute="centerX" secondItem="SlR-7f-bor" secondAttribute="centerX" id="lvf-X3-6Km"/>
                             <constraint firstItem="jaO-nQ-6oN" firstAttribute="centerY" secondItem="SlR-7f-bor" secondAttribute="centerY" multiplier="0.3" id="pF7-ES-qQd"/>
                             <constraint firstItem="0Cm-pc-9eK" firstAttribute="centerY" secondItem="SlR-7f-bor" secondAttribute="centerY" multiplier="0.6" id="qhY-fJ-t1B"/>
@@ -79,7 +71,6 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="0Cm-pc-9eK" id="Q1W-fB-O7J"/>
-                        <outlet property="nameTextField" destination="38l-Ay-rk0" id="pjM-0s-EY9"/>
                         <outlet property="passwordTextField" destination="dFK-oO-DYB" id="4C3-Vt-M7L"/>
                     </connections>
                 </viewController>
@@ -240,6 +231,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4r4-28-ayH"/>
+        <segue reference="viX-of-fl8"/>
     </inferredMetricsTieBreakers>
 </document>

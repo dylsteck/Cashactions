@@ -11,8 +11,6 @@ import FirebaseCore
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-
-    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
@@ -31,23 +29,10 @@ class LoginViewController: UIViewController {
                 print(error.localizedDescription)
                 self.performSegue(withIdentifier: "signUpSegue", sender: nil)
             }
-                
             else if let user = user{ // if there's no error
                 print("no error in sign up")
                 print(user.email)
                 self.performSegue(withIdentifier: "signUpSegue", sender: self)
-                
-                let changeRequest = user.createProfileChangeRequest()
-                changeRequest.displayName = self.nameTextField.text!
-                changeRequest.commitChanges(completion: { error in // adding display name to user
-                    if let error = error {
-                        print(error.localizedDescription)
-                    }
-                    else{
-                        print("no error in adding display name")
-                        print(user.displayName)
-                    }
-                })
             }
         }
     }
