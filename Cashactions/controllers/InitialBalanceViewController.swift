@@ -22,7 +22,10 @@ class InitialBalanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(firebaseAuth.currentUser?.email as! String)
+        if let index = email?.range(of: "@")?.lowerBound {
+            let cutEmail = email![..<index]
+            print(cutEmail)
+        }
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
@@ -34,10 +37,9 @@ class InitialBalanceViewController: UIViewController {
     
 
     @IBAction func addInitialBalance(_ sender: Any) {
-        let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Initial Transaction", addedByUser: (email!))
-        let transactionRef = self.ref.child("transactions").child(userID!).child("Initial Transaction")
-        
-        transactionRef.setValue(transaction.toAnyObject())
+         let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Initial Transaction", addedByUser: (email!))
+            let transactionRef = self.ref.child("transactions").child(userID!).child("Initial Transaction")
+            transactionRef.setValue(transaction.toAnyObject())
     } //end of IBAction
     
     /*
