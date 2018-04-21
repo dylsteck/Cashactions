@@ -22,10 +22,10 @@ class InitialBalanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let index = email?.range(of: "@")?.lowerBound {
-            let cutEmail = email![..<index]
-            print(cutEmail)
-        }
+//        if let index = email?.range(of: "@")?.lowerBound {
+//            let cutEmail = email![..<index]
+//            print(cutEmail)
+//        }
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
@@ -37,9 +37,14 @@ class InitialBalanceViewController: UIViewController {
     
 
     @IBAction func addInitialBalance(_ sender: Any) {
-         let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Initial Transaction", addedByUser: (email!))
-            let transactionRef = self.ref.child("transactions").child(userID!).child("Initial Transaction")
-            transactionRef.setValue(transaction.toAnyObject())
+        let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Initial Transaction", addedByUser: (email!))
+        let initialRef = self.ref.child(userID!).child("transactions").child("Initial Transaction")
+        initialRef.setValue(transaction.toAnyObject())
+        
+        let balance = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Balance", addedByUser: (email!))
+        let balanceRef = self.ref.child(userID!).child("Balance")
+        balanceRef.setValue(transaction.toAnyObject())
+        
     } //end of IBAction
     
     /*

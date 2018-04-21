@@ -13,7 +13,8 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class HomeViewController: UIViewController {
-    
+    var ref = Database.database().reference(withPath: "transactions")
+    var userID = Auth.auth().currentUser?.uid
     var powderAsh = UIColor(red:0.73, green:0.78, blue:0.75, alpha:1.0)
     var seaMist = UIColor(red:0.76, green:0.88, blue:0.76, alpha:1.0)
     var email = Auth.auth().currentUser?.email
@@ -34,7 +35,14 @@ class HomeViewController: UIViewController {
     }
 
     func observeDB(){
-       
+        self.ref.child(userID!).child("Balance").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let balance = value?["value"] as? String ?? ""
+            print(balance)
+            self.priceLabel.text = balance
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     @IBAction func addCash(_ sender: UIButton) {
         guard let textField = cashTextField,
