@@ -36,9 +36,8 @@ class HomeViewController: UIViewController {
     }
 
     func observeDB() {
-        ref.child(userID!).child("Balance").observe(.childAdded, with: { snapshot in
-            let userDict = snapshot.value as! [String: Any]
-            print(userDict["value"] as! String)
+        ref.child(userID!).child("Balance/value").observe(.value, with: { snapshot in
+            print(snapshot.value)
 //      update      ref.child("yourKey").child("yourKey").updateChildValues(["yourKey": yourValue])
         })
     }
