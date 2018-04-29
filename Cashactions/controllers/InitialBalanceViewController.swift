@@ -15,7 +15,8 @@ class InitialBalanceViewController: UIViewController {
     var firebaseAuth = Auth.auth()
     var ref = Database.database().reference(withPath: "transactions")
     var transactions: [Transaction] = []
-    var userID = Auth.auth().currentUser?.uid
+    var userID = Auth.auth().currentUser?.providerID
+    // ^ impt to use provider id and not user id
     var email = Auth.auth().currentUser?.email
     @IBOutlet weak var initialBalanceTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!

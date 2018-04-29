@@ -13,7 +13,8 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class HomeViewController: UIViewController {
-    var userID = Auth.auth().currentUser?.uid
+    var userID = Auth.auth().currentUser?.providerID
+    // ^ impt to use provider id and not user id
     var ref = Database.database().reference()
     var powderAsh = UIColor(red:0.73, green:0.78, blue:0.75, alpha:1.0)
     var seaMist = UIColor(red:0.76, green:0.88, blue:0.76, alpha:1.0)
@@ -36,8 +37,11 @@ class HomeViewController: UIViewController {
     }
 
     func observeDB() {
-        ref.child(userID!).child("Balance/value").observe(.value, with: { snapshot in
-            print(snapshot.value)
+        ref.child(self.userID!).child("Balance/value").observe(.value, with: { snapshot in
+            print(self.userID!)
+            let price = snapshot.value as! Int
+            print(price)
+            self.priceLabel.text = "$" + String(price)
 //      update      ref.child("yourKey").child("yourKey").updateChildValues(["yourKey": yourValue])
         })
     }
