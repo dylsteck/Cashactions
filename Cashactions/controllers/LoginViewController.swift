@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
             else if let user = user{ // if there's no error
                 print("no error in sign up")
                 print(user.email)
+                print(user.uid)
                 self.performSegue(withIdentifier: "signUpSegue", sender: self)
             }
         }
@@ -50,6 +51,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
             }
         }
+        
     }
 
 }
