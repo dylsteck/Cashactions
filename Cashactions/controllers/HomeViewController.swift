@@ -46,10 +46,17 @@ class HomeViewController: UIViewController {
         })
     }
     @IBAction func addCash(_ sender: UIButton) {
-        guard let textField = cashTextField,
-            let cashToSave = Int32(textField.text!) else {
-                return
-            }
+        let userID = Auth.auth().currentUser!.uid
+        let email = Auth.auth().currentUser?.email
+        
+        let transaction = Transaction(value: Int(cashTextField.text!)!, valueTitle: cashTextField.text!, addedByUser: (email!))
+        let initialRef = self.ref.child(userID).child("transactions").child(cashTextField.text!)
+        initialRef.setValue(transaction.toAnyObject())
+        
+        ref.child(userID).child("Balance/value").observeSingleEvent(of: .value, with: { snapshot in
+            let price = snapshot.value as! Int
+            self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(self.cashTextField.text!)!))
+        })
         
         let alert = UIAlertController(title: "Cashactions", message: "Transaction added", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default)
