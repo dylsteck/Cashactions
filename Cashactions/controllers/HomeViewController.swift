@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     var ref = Database.database().reference()
     var powderAsh = UIColor(red:0.73, green:0.78, blue:0.75, alpha:1.0)
     var seaMist = UIColor(red:0.76, green:0.88, blue:0.76, alpha:1.0)
-    var email = Auth.auth().currentUser?.email
+    
     @IBOutlet weak var cashView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var cashTextField: UITextField!
@@ -35,8 +35,10 @@ class HomeViewController: UIViewController {
     }
 
     func observeDB() {
-        ref.child(Auth.auth().currentUser!.uid).child("Balance/value").observe(.value, with: { snapshot in
-            print(Auth.auth().currentUser!.uid)
+        let userID = Auth.auth().currentUser!.uid
+        
+        ref.child(userID).child("Balance/value").observe(.value, with: { snapshot in
+            print(userID)
             let price = snapshot.value as! Int
             print(price)
             self.priceLabel.text = "$" + String(price)

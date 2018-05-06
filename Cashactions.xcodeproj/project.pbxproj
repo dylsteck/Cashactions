@@ -58,6 +58,7 @@
 		FC76B8102079134500E2B1F3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialBalanceViewController.swift; sourceTree = "<group>"; };
 		FC76B817207916AF00E2B1F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC8C1404209EB3A800DD31E8 /* Cashactions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cashactions.entitlements; sourceTree = "<group>"; };
 		FCC08E832065E5A700D8BE4F /* Cashactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC08E862065E5A700D8BE4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC08E8B2065E5A700D8BE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 		FCC08E852065E5A700D8BE4F /* Cashactions */ = {
 			isa = PBXGroup;
 			children = (
+				FC8C1404209EB3A800DD31E8 /* Cashactions.entitlements */,
 				FC5E7BC12085972100C6EDC0 /* models */,
 				FC4F6B262069A72600BA211B /* controllers */,
 				FCC08EB72065EC1100D8BE4F /* images */,
@@ -288,6 +290,11 @@
 					FCC08E822065E5A700D8BE4F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					FCC08E992065E5A700D8BE4F = {
 						CreatedOnToolsVersion = 9.2;
@@ -682,6 +689,7 @@
 			baseConfigurationReference = 4F92795B0E7C0EDBA10A309B /* Pods-Cashactions.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cashactions/Cashactions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JTL74VZ4WQ;
 				INFOPLIST_FILE = Cashactions/Info.plist;
@@ -698,6 +706,7 @@
 			baseConfigurationReference = AC4A512F1496ED93ECA5B0B9 /* Pods-Cashactions.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cashactions/Cashactions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JTL74VZ4WQ;
 				INFOPLIST_FILE = Cashactions/Info.plist;

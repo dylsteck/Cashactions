@@ -15,7 +15,6 @@ class InitialBalanceViewController: UIViewController {
     var firebaseAuth = Auth.auth()
     var ref = Database.database().reference(withPath: "transactions")
     var transactions: [Transaction] = []
-    var email = Auth.auth().currentUser?.email
     @IBOutlet weak var initialBalanceTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -36,12 +35,15 @@ class InitialBalanceViewController: UIViewController {
     
 
     @IBAction func addInitialBalance(_ sender: Any) {
+        let userID = Auth.auth().currentUser!.uid
+        let email = Auth.auth().currentUser?.email
+        
         let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Initial Transaction", addedByUser: (email!))
-        let initialRef = self.ref.child(Auth.auth().currentUser!.uid).child("transactions").child("Initial Transaction")
+        let initialRef = self.ref.child(userID).child("transactions").child("Initial Transaction")
         initialRef.setValue(transaction.toAnyObject())
         
         let balance = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Balance", addedByUser: (email!))
-        let balanceRef = self.ref.child(Auth.auth().currentUser!.uid).child("Balance")
+        let balanceRef = self.ref.child(userID).child("Balance")
         balanceRef.setValue(transaction.toAnyObject())
         
     } //end of IBAction

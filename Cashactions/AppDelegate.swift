@@ -16,15 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    func segueStoryboard() {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : UIViewController = storyboard.instantiateViewController(withIdentifier: "Home") as UIViewController
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        
-        if Auth.auth().currentUser != nil {
-            let vc = HomeViewController()
-            window?.rootViewController = vc
-        } else{}
+         //     try! Auth.auth().signOut()
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            if user != nil {
+                self.segueStoryboard()
+            }
+        }
         return true
     }
 
