@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     var ref = Database.database().reference()
     var powderAsh = UIColor(red:0.73, green:0.78, blue:0.75, alpha:1.0)
     var seaMist = UIColor(red:0.76, green:0.88, blue:0.76, alpha:1.0)
+    var window:UIWindow?
     
     @IBOutlet weak var cashView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -65,6 +66,24 @@ class HomeViewController: UIViewController {
         
     }
     
+    
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+       try! Auth.auth().signOut()
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                // User is signed in.
+                print("user has not been signed out")
+            } else {
+                // No user is signed in.
+                print("user has been signed out")
+                
+                let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc : UIViewController = storyboard.instantiateViewController(withIdentifier: "Login") as UIViewController
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = vc
+            }
+        }
+    }
 }
 
 

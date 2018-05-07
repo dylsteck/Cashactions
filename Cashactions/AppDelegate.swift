@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
                 self.segueStoryboard()
-            }
+            } else{return}
         }
         return true
     }
