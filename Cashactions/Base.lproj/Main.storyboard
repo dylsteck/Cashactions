@@ -161,7 +161,6 @@
                                         <barButtonItem key="rightBarButtonItem" title="Sign Out" id="gXP-BZ-lMy">
                                             <connections>
                                                 <action selector="signOut:" destination="bcO-vw-J6E" id="U5u-Bl-yc3"/>
-                                                <segue destination="3Af-uR-KbT" kind="modal" identifier="logoutSegue" id="CEt-xs-dU5"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

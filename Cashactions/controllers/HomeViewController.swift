@@ -66,20 +66,27 @@ class HomeViewController: UIViewController {
         
     }
     
-    
-    @IBAction func signOut(_ sender: UIBarButtonItem) {
-        Auth.auth().addStateDidChangeListener { auth, user in
-            try! auth.signOut()
-            if let user = user {
-                // User is signed in.
-                print("user has not been signed out")
-            } else {
-                // No user is signed in.
-                print("user has been signed out")
-                self.performSegue(withIdentifier: "logoutSegue", sender: self)
+    func checkStatus(){
+        if Auth.auth().currentUser != nil {
+            // User is signed in.
+            print("user is not signed in")
+        }
+        else {
+            // No user is signed in.
+            print("no user signed in, continue sign out")
+            if let storyboard = self.storyboard {
+                let vc = storyboard.instantiateViewController(withIdentifier: "Login") as! UIViewController
+                self.present(vc, animated: false, completion: nil)
             }
         }
     }
+    
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+        try! Auth.auth().signOut()
+        checkStatus()
+    }
+    
+    
 }
 
 

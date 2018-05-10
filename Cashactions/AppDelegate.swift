@@ -29,11 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
          //     try! Auth.auth().signOut()
-        Auth.auth().addStateDidChangeListener() { auth, user in
-            if user != nil {
+            if Auth.auth().currentUser != nil {
                 self.segueStoryboard()
-            } else{return}
-        }
+            }
         return true
     }
 
