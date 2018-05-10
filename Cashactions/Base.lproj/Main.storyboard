@@ -42,7 +42,6 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUp:" destination="3Af-uR-KbT" eventType="touchUpInside" id="Rcm-4Y-568"/>
-                                    <segue destination="WWT-PR-pEN" kind="modal" identifier="signUpSegue" id="q0Y-bO-NOo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNt-EY-ACC">
@@ -50,7 +49,6 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logIn:" destination="3Af-uR-KbT" eventType="touchUpInside" id="xKn-CR-eI1"/>
-                                    <segue destination="bcO-vw-J6E" kind="modal" identifier="loginSegue" id="viX-of-fl8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,7 +79,7 @@
         <!--Initial Balance View Controller-->
         <scene sceneID="oVo-dT-Qnj">
             <objects>
-                <viewController id="WWT-PR-pEN" customClass="InitialBalanceViewController" customModule="Cashactions" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialBalance" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WWT-PR-pEN" customClass="InitialBalanceViewController" customModule="Cashactions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3B-r5-fop">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,11 +177,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsS-uv-Jhm">
-                                        <rect key="frame" x="164.5" y="90" width="46" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="Iyj-re-5Kv"/>
-                                            <constraint firstAttribute="height" constant="30" id="Weq-9J-LO0"/>
-                                        </constraints>
+                                        <rect key="frame" x="163" y="90" width="49" height="30"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -191,13 +185,31 @@
                                             <action selector="addCash:" destination="bcO-vw-J6E" eventType="touchUpInside" id="iRh-2q-lsW"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uBU-Kx-SKh">
+                                        <rect key="frame" x="8" y="49" width="91" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="4eU-0m-DcV"/>
+                                            <constraint firstAttribute="height" constant="28" id="Mkl-e9-kIb"/>
+                                            <constraint firstAttribute="width" constant="91" id="bLS-6l-sSW"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Add"/>
+                                            <segment title="Spend"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="CsS-uv-Jhm" firstAttribute="centerX" secondItem="NSS-Qb-R9G" secondAttribute="centerX" id="4nc-g3-FoW"/>
-                                    <constraint firstAttribute="bottom" secondItem="CsS-uv-Jhm" secondAttribute="bottom" constant="8" id="VFw-nJ-I4r"/>
+                                    <constraint firstAttribute="trailing" secondItem="CsS-uv-Jhm" secondAttribute="trailing" constant="163" id="G0W-jN-EWg"/>
+                                    <constraint firstAttribute="bottom" secondItem="CsS-uv-Jhm" secondAttribute="bottom" constant="8" id="GlS-sy-d6W"/>
+                                    <constraint firstAttribute="trailing" secondItem="uBU-Kx-SKh" secondAttribute="trailing" constant="276" id="V1c-mx-Uhv"/>
+                                    <constraint firstItem="CsS-uv-Jhm" firstAttribute="leading" secondItem="NSS-Qb-R9G" secondAttribute="leading" constant="163" id="Yzu-QQ-c5y"/>
                                     <constraint firstItem="fZn-0e-i10" firstAttribute="centerY" secondItem="NSS-Qb-R9G" secondAttribute="centerY" id="aCr-vD-spa"/>
+                                    <constraint firstItem="CsS-uv-Jhm" firstAttribute="top" secondItem="NSS-Qb-R9G" secondAttribute="top" constant="90" id="jR1-IV-4dh"/>
+                                    <constraint firstItem="uBU-Kx-SKh" firstAttribute="leading" secondItem="NSS-Qb-R9G" secondAttribute="leading" constant="8" id="kwM-tu-yUD"/>
+                                    <constraint firstItem="uBU-Kx-SKh" firstAttribute="top" secondItem="NSS-Qb-R9G" secondAttribute="top" constant="49" id="l24-z3-k5j"/>
                                     <constraint firstItem="fZn-0e-i10" firstAttribute="centerX" secondItem="NSS-Qb-R9G" secondAttribute="centerX" id="muc-w2-PNB"/>
+                                    <constraint firstAttribute="bottom" secondItem="uBU-Kx-SKh" secondAttribute="bottom" constant="51" id="zqH-sx-iLg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -221,16 +233,14 @@
                     <connections>
                         <outlet property="cashButton" destination="CsS-uv-Jhm" id="dhH-Wh-0th"/>
                         <outlet property="cashTextField" destination="fZn-0e-i10" id="Lf8-25-cx3"/>
+                        <outlet property="cashTypeControl" destination="uBU-Kx-SKh" id="LmC-im-7Da"/>
                         <outlet property="cashView" destination="NSS-Qb-R9G" id="X4Y-aB-YNn"/>
                         <outlet property="priceLabel" destination="PIO-ko-ibB" id="Qpx-D0-ULO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UH4-Cd-WqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="34"/>
+            <point key="canvasLocation" x="1493.5999999999999" y="33.733133433283363"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="viX-of-fl8"/>
-    </inferredMetricsTieBreakers>
 </document>

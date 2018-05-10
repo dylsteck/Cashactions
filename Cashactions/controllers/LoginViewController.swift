@@ -32,7 +32,10 @@ class LoginViewController: UIViewController {
                 print("no error in sign up")
                 print(user.email)
                 print(user.uid)
-                self.performSegue(withIdentifier: "signUpSegue", sender: self)
+                if let storyboard = self.storyboard {
+                    let vc = storyboard.instantiateViewController(withIdentifier: "InitialBalance") as! UIViewController
+                    self.present(vc, animated: false, completion: nil)
+                }
             }
         }
     }
@@ -42,11 +45,13 @@ class LoginViewController: UIViewController {
             if let error = error { // if there's an error
                 print(error.localizedDescription)
             }
-                
             else if let user = user{ // if there's no error
                 print("no error in log in")
                 print(user.email)
-                self.performSegue(withIdentifier: "loginSegue", sender: self)
+                if let storyboard = self.storyboard {
+                    let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! UIViewController
+                    self.present(vc, animated: false, completion: nil)
+                }
             }
         }
         

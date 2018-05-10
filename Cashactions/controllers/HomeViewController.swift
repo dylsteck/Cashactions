@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var cashTextField: UITextField!
     @IBOutlet weak var cashButton: UIButton!
+    @IBOutlet weak var cashTypeControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,14 +50,31 @@ class HomeViewController: UIViewController {
     @IBAction func addCash(_ sender: UIButton) {
         let userID = Auth.auth().currentUser!.uid
         let email = Auth.auth().currentUser?.email
+
+        var segType:String
+        var segFinal = ""
+        if self.cashTypeControl.selectedSegmentIndex == 0{
+            segType = "Add"
+            segFinal = segType
+        }
+        else{
+            segType = "Spend"
+            segFinal = segType
+        }
         
-        let transaction = Transaction(value: Int(cashTextField.text!)!, valueTitle: cashTextField.text!, addedByUser: (email!))
+        let transaction = Transaction(value: Int(cashTextField.text!)!, transactionType: segFinal, valueTitle: cashTextField.text!, addedByUser: (email!))
         let initialRef = self.ref.child(userID).child("transactions").child(cashTextField.text!)
         initialRef.setValue(transaction.toAnyObject())
         
         ref.child(userID).child("Balance/value").observeSingleEvent(of: .value, with: { snapshot in
             let price = snapshot.value as! Int
-            self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(self.cashTextField.text!)!))
+            if self.cashTypeControl.selectedSegmentIndex == 0{
+            self.ref.child(userID).child("Balance/value").setValue(Int(price + Int(self.cashTextField.text!)!))
+            }
+            else {
+                self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(self.cashTextField.text!)!))
+            }
+            
         })
         
         let alert = UIAlertController(title: "Cashactions", message: "Transaction added", preferredStyle: .alert)

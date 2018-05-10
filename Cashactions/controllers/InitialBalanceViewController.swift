@@ -38,11 +38,11 @@ class InitialBalanceViewController: UIViewController {
         let userID = Auth.auth().currentUser!.uid
         let email = Auth.auth().currentUser?.email
         
-        let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Initial Transaction", addedByUser: (email!))
+        let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, transactionType: "Add", valueTitle: "Initial Transaction", addedByUser: (email!))
         let initialRef = self.ref.child(userID).child("transactions").child("Initial Transaction")
         initialRef.setValue(transaction.toAnyObject())
         
-        let balance = Transaction(value: Int(initialBalanceTextField.text!)!, valueTitle: "Balance", addedByUser: (email!))
+        let balance = Transaction(value: Int(initialBalanceTextField.text!)!, transactionType: "Add", valueTitle: "Balance", addedByUser: (email!))
         let balanceRef = self.ref.child(userID).child("Balance")
         balanceRef.setValue(transaction.toAnyObject())
         
