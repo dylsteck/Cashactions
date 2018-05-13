@@ -15,7 +15,7 @@
 		FC76B8122079134500E2B1F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B80F2079134500E2B1F3 /* LoginViewController.swift */; };
 		FC76B8132079134500E2B1F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B8102079134500E2B1F3 /* HomeViewController.swift */; };
 		FC76B8142079134500E2B1F3 /* InitialBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */; };
-		FC76B818207916B000E2B1F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC76B817207916AF00E2B1F3 /* GoogleService-Info.plist */; };
+		FC99848420A8BB9A00CE16E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC99848320A8BB9900CE16E6 /* GoogleService-Info.plist */; };
 		FCC08E872065E5A700D8BE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC08E862065E5A700D8BE4F /* AppDelegate.swift */; };
 		FCC08E8C2065E5A700D8BE4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC08E8A2065E5A700D8BE4F /* Main.storyboard */; };
 		FCC08E912065E5A700D8BE4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC08E902065E5A700D8BE4F /* Assets.xcassets */; };
@@ -59,8 +59,8 @@
 		FC76B80F2079134500E2B1F3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FC76B8102079134500E2B1F3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialBalanceViewController.swift; sourceTree = "<group>"; };
-		FC76B817207916AF00E2B1F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC8C1404209EB3A800DD31E8 /* Cashactions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cashactions.entitlements; sourceTree = "<group>"; };
+		FC99848320A8BB9900CE16E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCC08E832065E5A700D8BE4F /* Cashactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC08E862065E5A700D8BE4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC08E8B2065E5A700D8BE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				FCC08E902065E5A700D8BE4F /* Assets.xcassets */,
 				FCC08E922065E5A700D8BE4F /* LaunchScreen.storyboard */,
 				FCC08E952065E5A700D8BE4F /* Info.plist */,
-				FC76B817207916AF00E2B1F3 /* GoogleService-Info.plist */,
+				FC99848320A8BB9900CE16E6 /* GoogleService-Info.plist */,
 			);
 			path = Cashactions;
 			sourceTree = "<group>";
@@ -295,7 +295,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Dylan Steck";
 				TargetAttributes = {
 					FCC08E822065E5A700D8BE4F = {
@@ -345,13 +345,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC08E942065E5A700D8BE4F /* LaunchScreen.storyboard in Resources */,
+				FC99848420A8BB9A00CE16E6 /* GoogleService-Info.plist in Resources */,
 				FCC08EC32065EC5B00D8BE4F /* icons8-cottage.png in Resources */,
 				FCC08E912065E5A700D8BE4F /* Assets.xcassets in Resources */,
 				FCC08EC22065EC5B00D8BE4F /* icons8-cash.png in Resources */,
 				FC66416820A281910078FC65 /* Splash.jpg in Resources */,
 				FCC08EC12065EC5B00D8BE4F /* icons8-roofing.png in Resources */,
 				FCC08E8C2065E5A700D8BE4F /* Main.storyboard in Resources */,
-				FC76B818207916B000E2B1F3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +603,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -610,6 +611,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -660,6 +662,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -667,6 +670,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -702,12 +706,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cashactions/Cashactions.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JTL74VZ4WQ;
+				DEVELOPMENT_TEAM = CG8RAYC636;
 				INFOPLIST_FILE = Cashactions/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dylansteck.cashactions;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylsteck.cashactionsiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -719,12 +727,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cashactions/Cashactions.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JTL74VZ4WQ;
+				DEVELOPMENT_TEAM = CG8RAYC636;
 				INFOPLIST_FILE = Cashactions/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dylansteck.cashactions;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylsteck.cashactionsiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
