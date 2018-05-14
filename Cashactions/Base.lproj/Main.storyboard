@@ -136,17 +136,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6y-oO-ZfN">
-                                <rect key="frame" x="64" y="400" width="210" height="24"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="M6y-oO-ZfN">
+                                <rect key="frame" x="64" y="245.5" width="210" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="TYA-qY-Yco"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES" textContentType="cc-number"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cashactions-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="E1k-lA-CoA">
-                                <rect key="frame" x="25.5" y="138.5" width="62" height="100.5"/>
+                                <rect key="frame" x="25.5" y="53" width="62" height="100.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="E1k-lA-CoA" secondAttribute="height" multiplier="31:50" id="AL8-P6-gkV"/>
                                     <constraint firstAttribute="height" constant="100.5" id="UIK-vM-d4q"/>
@@ -154,26 +154,28 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbp-gl-F2x">
-                                <rect key="frame" x="54" y="250" width="173" height="50"/>
+                                <rect key="frame" x="54" y="164" width="173" height="50"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your initial balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLH-gd-aI5">
-                                <rect key="frame" x="59" y="296.5" width="182" height="25"/>
+                                <rect key="frame" x="59" y="211" width="182" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-hd-EJh" userLabel="Price Line View">
-                                <rect key="frame" x="69" y="443" width="200" height="1"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-hd-EJh" userLabel="Price Line View">
+                                <rect key="frame" x="59.5" y="274.5" width="200" height="1"/>
                                 <color key="backgroundColor" white="0.84529622400000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="QAZ-rh-hZl"/>
+                                    <constraint firstAttribute="width" secondItem="RtQ-hd-EJh" secondAttribute="height" multiplier="200:1" id="6N5-H1-mJm"/>
+                                    <constraint firstAttribute="width" constant="200" id="eWm-ZO-K9T"/>
+                                    <constraint firstAttribute="height" constant="1" id="nyA-yM-jW4"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwY-Uv-Q9T">
-                                <rect key="frame" x="110.5" y="463" width="79" height="36"/>
+                                <rect key="frame" x="110.5" y="291" width="79" height="36"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Add Value">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -186,17 +188,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.97254901960784312" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="E1k-lA-CoA" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.55" id="6FV-gW-Kyk"/>
+                            <constraint firstItem="E1k-lA-CoA" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.3" id="6FV-gW-Kyk"/>
                             <constraint firstItem="gbp-gl-F2x" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.75" id="EmI-v0-kc7"/>
+                            <constraint firstItem="RtQ-hd-EJh" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.8" id="KYA-2D-H6j"/>
                             <constraint firstItem="VwY-Uv-Q9T" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.8" id="Rda-tz-88k"/>
-                            <constraint firstItem="M6y-oO-ZfN" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="1.2" id="S6E-6N-vD1"/>
-                            <constraint firstItem="RtQ-hd-EJh" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="1.3" id="aa1-zo-NCk"/>
-                            <constraint firstItem="gLH-gd-aI5" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.9" id="bGD-TW-f3k"/>
+                            <constraint firstItem="M6y-oO-ZfN" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.75" id="S6E-6N-vD1"/>
+                            <constraint firstItem="gLH-gd-aI5" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.65" id="bGD-TW-f3k"/>
                             <constraint firstItem="M6y-oO-ZfN" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.9" id="c51-tE-XiJ"/>
-                            <constraint firstItem="RtQ-hd-EJh" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.9" id="gXL-Ze-CMG"/>
+                            <constraint firstItem="RtQ-hd-EJh" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.85" id="jJF-hP-S25"/>
                             <constraint firstItem="E1k-lA-CoA" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.3" id="rHa-mb-ZrE"/>
-                            <constraint firstItem="VwY-Uv-Q9T" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="1.4" id="t6D-2M-j6x"/>
-                            <constraint firstItem="gbp-gl-F2x" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.8" id="umc-Lu-D32"/>
+                            <constraint firstItem="VwY-Uv-Q9T" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.9" id="t6D-2M-j6x"/>
+                            <constraint firstItem="gbp-gl-F2x" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.55" id="umc-Lu-D32"/>
                             <constraint firstItem="gLH-gd-aI5" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.8" id="wbf-BY-uRJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bPT-4q-iQB"/>

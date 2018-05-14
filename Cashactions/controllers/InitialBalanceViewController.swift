@@ -11,7 +11,7 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseDatabase
 
-class InitialBalanceViewController: UIViewController {
+class InitialBalanceViewController: UIViewController, UITextFieldDelegate {
     var firebaseAuth = Auth.auth()
     var ref = Database.database().reference(withPath: "transactions")
     var transactions: [Transaction] = []
@@ -25,6 +25,9 @@ class InitialBalanceViewController: UIViewController {
 //            print(cutEmail)
 //        }
         ref = Database.database().reference()
+        initialBalanceTextField.delegate = self
+        initialBalanceTextField.resignFirstResponder()
+        
         // Do any additional setup after loading the view.
     }
 
