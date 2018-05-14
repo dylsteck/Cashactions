@@ -10,12 +10,16 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        textFieldShouldReturn(emailTextField)
+        emailTextField.delegate = self as! UITextFieldDelegate
+        emailTextField.tag = 0 //Increment accordingly
+        passwordTextField.delegate = self as! UITextFieldDelegate
+        passwordTextField.tag = 1
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +27,19 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+    
     @IBAction func signUp(_ sender: Any) {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let error = error { // if there's an error

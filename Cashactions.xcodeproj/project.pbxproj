@@ -16,6 +16,10 @@
 		FC76B8132079134500E2B1F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B8102079134500E2B1F3 /* HomeViewController.swift */; };
 		FC76B8142079134500E2B1F3 /* InitialBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */; };
 		FC99848420A8BB9A00CE16E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC99848320A8BB9900CE16E6 /* GoogleService-Info.plist */; };
+		FC99848620A8EF1A00CE16E6 /* cashactions-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FC99848520A8EF1900CE16E6 /* cashactions-icon.png */; };
+		FC99848D20A91A8800CE16E6 /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC99848A20A91A8600CE16E6 /* Avenir-Medium.ttf */; };
+		FC99848E20A91A8800CE16E6 /* Avenir-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC99848B20A91A8700CE16E6 /* Avenir-Black.ttf */; };
+		FC99848F20A91A8800CE16E6 /* Avenir-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC99848C20A91A8700CE16E6 /* Avenir-Book.ttf */; };
 		FCC08E872065E5A700D8BE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC08E862065E5A700D8BE4F /* AppDelegate.swift */; };
 		FCC08E8C2065E5A700D8BE4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC08E8A2065E5A700D8BE4F /* Main.storyboard */; };
 		FCC08E912065E5A700D8BE4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC08E902065E5A700D8BE4F /* Assets.xcassets */; };
@@ -61,6 +65,10 @@
 		FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialBalanceViewController.swift; sourceTree = "<group>"; };
 		FC8C1404209EB3A800DD31E8 /* Cashactions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cashactions.entitlements; sourceTree = "<group>"; };
 		FC99848320A8BB9900CE16E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC99848520A8EF1900CE16E6 /* cashactions-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cashactions-icon.png"; sourceTree = "<group>"; };
+		FC99848A20A91A8600CE16E6 /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
+		FC99848B20A91A8700CE16E6 /* Avenir-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Black.ttf"; sourceTree = "<group>"; };
+		FC99848C20A91A8700CE16E6 /* Avenir-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Book.ttf"; sourceTree = "<group>"; };
 		FCC08E832065E5A700D8BE4F /* Cashactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC08E862065E5A700D8BE4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC08E8B2065E5A700D8BE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,7 +158,11 @@
 		FC66416620A281880078FC65 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				FC99848B20A91A8700CE16E6 /* Avenir-Black.ttf */,
+				FC99848C20A91A8700CE16E6 /* Avenir-Book.ttf */,
+				FC99848A20A91A8600CE16E6 /* Avenir-Medium.ttf */,
 				FC66416720A281910078FC65 /* Splash.jpg */,
+				FC99848520A8EF1900CE16E6 /* cashactions-icon.png */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -346,9 +358,13 @@
 			files = (
 				FCC08E942065E5A700D8BE4F /* LaunchScreen.storyboard in Resources */,
 				FC99848420A8BB9A00CE16E6 /* GoogleService-Info.plist in Resources */,
+				FC99848620A8EF1A00CE16E6 /* cashactions-icon.png in Resources */,
 				FCC08EC32065EC5B00D8BE4F /* icons8-cottage.png in Resources */,
+				FC99848E20A91A8800CE16E6 /* Avenir-Black.ttf in Resources */,
+				FC99848D20A91A8800CE16E6 /* Avenir-Medium.ttf in Resources */,
 				FCC08E912065E5A700D8BE4F /* Assets.xcassets in Resources */,
 				FCC08EC22065EC5B00D8BE4F /* icons8-cash.png in Resources */,
+				FC99848F20A91A8800CE16E6 /* Avenir-Book.ttf in Resources */,
 				FC66416820A281910078FC65 /* Splash.jpg in Resources */,
 				FCC08EC12065EC5B00D8BE4F /* icons8-roofing.png in Resources */,
 				FCC08E8C2065E5A700D8BE4F /* Main.storyboard in Resources */,
