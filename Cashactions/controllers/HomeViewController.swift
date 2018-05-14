@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     var seaMist = UIColor(red:0.76, green:0.88, blue:0.76, alpha:1.0)
     var window:UIWindow?
     
+    @IBOutlet weak var signOutButton: UIBarButtonItem!
     @IBOutlet weak var cashView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var cashTextField: UITextField!
