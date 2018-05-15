@@ -17,6 +17,7 @@ class InitialBalanceViewController: UIViewController, UITextFieldDelegate {
     var transactions: [Transaction] = []
     @IBOutlet weak var initialBalanceTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
+    var formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +37,23 @@ class InitialBalanceViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        //Exits keyboard when user taps away
+    }
 
     @IBAction func addInitialBalance(_ sender: Any) {
         let userID = Auth.auth().currentUser!.uid
         let email = Auth.auth().currentUser?.email
+        let tValue = initialBalanceTextField.text!
+        formatter.dateFormat = "MM/dd/yyyy, H:mm:ss"
+        var timeString = formatter.string(from: Date())
         
-        let transaction = Transaction(value: Int(initialBalanceTextField.text!)!, transactionType: "Add", valueTitle: "Initial Transaction", addedByUser: (email!))
+        let transaction = Transaction(value: Int(tValue)!, transactionType: "Add", valueType: "Initial Transaction", addedByUser: (email!), dateAdded: timeString )
         let initialRef = self.ref.child(userID).child("transactions").child("Initial Transaction")
         initialRef.setValue(transaction.toAnyObject())
         
-        let balance = Transaction(value: Int(initialBalanceTextField.text!)!, transactionType: "Add", valueTitle: "Balance", addedByUser: (email!))
+        let balance = Transaction(value: Int(tValue)!, transactionType: "Add", valueType: "Balance: $" + tValue, addedByUser: (email!), dateAdded: timeString)
         let balanceRef = self.ref.child(userID).child("Balance")
         balanceRef.setValue(transaction.toAnyObject())
         

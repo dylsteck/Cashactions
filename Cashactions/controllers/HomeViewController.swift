@@ -8,30 +8,35 @@
 
 import UIKit
 import CoreData
-import ChameleonFramework
 import FirebaseAuth
 import FirebaseDatabase
 
 class HomeViewController: UIViewController {
     var ref = Database.database().reference()
-    var powderAsh = UIColor(red:0.73, green:0.78, blue:0.75, alpha:1.0)
-    var seaMist = UIColor(red:0.76, green:0.88, blue:0.76, alpha:1.0)
     var window:UIWindow?
+    let cashTypes = ["Bills", "Business", "Food and Drink", "Miscellaneous", "Other", "Shopping", "Travel"]
     
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var signOutButton: UIBarButtonItem!
-    @IBOutlet weak var cashView: UIView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var cashTextField: UITextField!
     @IBOutlet weak var cashButton: UIButton!
     @IBOutlet weak var cashTypeControl: UISegmentedControl!
+    var formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         observeDB()
-        cashView.backgroundColor = GradientColor(.leftToRight, frame: view.frame, colors: [powderAsh, seaMist])
+        pickerView.delegate = self
+        pickerView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        //Exits keyboard when user taps away
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,6 +56,10 @@ class HomeViewController: UIViewController {
     @IBAction func addCash(_ sender: UIButton) {
         let userID = Auth.auth().currentUser!.uid
         let email = Auth.auth().currentUser?.email
+        
+        formatter.dateFormat = "MM/dd/yyyy, H:mm:ss"
+        var timeString = formatter.string(from: Date())
+        var tValue = cashTextField.text!
 
         var segType:String
         var segFinal = ""
@@ -62,18 +71,23 @@ class HomeViewController: UIViewController {
             segType = "Spend"
             segFinal = segType
         }
-        
-        let transaction = Transaction(value: Int(cashTextField.text!)!, transactionType: segFinal, valueTitle: cashTextField.text!, addedByUser: (email!))
-        let initialRef = self.ref.child(userID).child("transactions").child(cashTextField.text!)
-        initialRef.setValue(transaction.toAnyObject())
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            let pickerType = cashTypes[row]
+            let valueType = pickerType + ":" + tValue
+            let transaction = Transaction(value: Int(tValue)!, transactionType: segFinal, valueType: valueType, addedByUser: (email!), dateAdded: timeString)
+            let initialRef = self.ref.child(userID).child("transactions").child(cashTextField.text!)
+            initialRef.setValue(transaction.toAnyObject())
+            print(pickerType)
+            return
+        }
         
         ref.child(userID).child("Balance/value").observeSingleEvent(of: .value, with: { snapshot in
             let price = snapshot.value as! Int
             if self.cashTypeControl.selectedSegmentIndex == 0{
-            self.ref.child(userID).child("Balance/value").setValue(Int(price + Int(self.cashTextField.text!)!))
+                self.ref.child(userID).child("Balance/value").setValue(Int(price + Int(tValue)!))
             }
             else {
-                self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(self.cashTextField.text!)!))
+                self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(tValue)!))
             }
             
         })
@@ -107,5 +121,16 @@ class HomeViewController: UIViewController {
     
     
 }
-
-
+extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cashTypes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cashTypes[row]
+    }
+}

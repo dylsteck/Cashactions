@@ -17,15 +17,17 @@ struct Transaction {
     let addedByUser: String
     let transactionType: String
     let ref: DatabaseReference?
-    let valueTitle: String
+    let valueType: String
+    let dateAdded: String
     
-    init(value: Int, transactionType: String, valueTitle: String, addedByUser: String) {
+    init(value: Int, transactionType: String, valueType: String, addedByUser: String, dateAdded: String) {
 //      self.key = key
         self.value = value
         self.addedByUser = addedByUser
         self.transactionType = transactionType
-        self.valueTitle = valueTitle
+        self.valueType = valueType
         self.ref = nil
+        self.dateAdded = dateAdded
     }
     
     init(snapshot: DataSnapshot) {
@@ -34,16 +36,18 @@ struct Transaction {
         value = snapshotValue["value"] as! Int
         addedByUser = snapshotValue["addedByUser"] as! String
         ref = snapshot.ref
-        valueTitle = snapshotValue["valueTitle"] as! String
+        valueType = snapshotValue["valueType"] as! String
         transactionType = snapshotValue["transactionType"] as! String
+        dateAdded = snapshotValue["dateAdded"] as! String
     }
     
     func toAnyObject() -> Any {
         return [
             "value": value,
-            "valueTitle": valueTitle,
+            "valueType": valueType,
             "transactionType": transactionType,
             "addedByUser": addedByUser,
+            "dateAdded": dateAdded
         ]
     }
     

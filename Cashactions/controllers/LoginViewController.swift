@@ -26,6 +26,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        //Exits keyboard when user taps away
+    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
@@ -38,6 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         // Do not add a line break
         return false
+        // this function goes to next keyboard(email to password etc)
     }
     
     @IBAction func signUp(_ sender: Any) {

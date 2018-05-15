@@ -166,12 +166,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-hd-EJh" userLabel="Price Line View">
-                                <rect key="frame" x="59.5" y="274.5" width="200" height="1"/>
+                                <rect key="frame" x="69" y="274.5" width="200" height="1"/>
                                 <color key="backgroundColor" white="0.84529622400000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="RtQ-hd-EJh" secondAttribute="height" multiplier="200:1" id="6N5-H1-mJm"/>
-                                    <constraint firstAttribute="width" constant="200" id="eWm-ZO-K9T"/>
-                                    <constraint firstAttribute="height" constant="1" id="nyA-yM-jW4"/>
+                                    <constraint firstAttribute="height" constant="1" id="LV4-qm-wIC"/>
+                                    <constraint firstAttribute="width" secondItem="RtQ-hd-EJh" secondAttribute="height" multiplier="200:1" id="g60-sf-LXX"/>
+                                    <constraint firstAttribute="width" constant="200" id="m5O-e2-4XL"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwY-Uv-Q9T">
@@ -190,12 +190,12 @@
                         <constraints>
                             <constraint firstItem="E1k-lA-CoA" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.3" id="6FV-gW-Kyk"/>
                             <constraint firstItem="gbp-gl-F2x" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.75" id="EmI-v0-kc7"/>
-                            <constraint firstItem="RtQ-hd-EJh" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.8" id="KYA-2D-H6j"/>
                             <constraint firstItem="VwY-Uv-Q9T" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.8" id="Rda-tz-88k"/>
                             <constraint firstItem="M6y-oO-ZfN" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.75" id="S6E-6N-vD1"/>
                             <constraint firstItem="gLH-gd-aI5" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.65" id="bGD-TW-f3k"/>
                             <constraint firstItem="M6y-oO-ZfN" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.9" id="c51-tE-XiJ"/>
-                            <constraint firstItem="RtQ-hd-EJh" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.85" id="jJF-hP-S25"/>
+                            <constraint firstItem="RtQ-hd-EJh" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.9" id="n3V-Cs-NSz"/>
+                            <constraint firstItem="RtQ-hd-EJh" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.8" id="nas-Hh-F2V"/>
                             <constraint firstItem="E1k-lA-CoA" firstAttribute="centerX" secondItem="bPT-4q-iQB" secondAttribute="centerX" multiplier="0.3" id="rHa-mb-ZrE"/>
                             <constraint firstItem="VwY-Uv-Q9T" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.9" id="t6D-2M-j6x"/>
                             <constraint firstItem="gbp-gl-F2x" firstAttribute="centerY" secondItem="bPT-4q-iQB" secondAttribute="centerY" multiplier="0.55" id="umc-Lu-D32"/>
@@ -219,6 +219,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsS-uv-Jhm">
+                                <rect key="frame" x="30" y="370" width="315" height="50"/>
+                                <color key="backgroundColor" red="0.77647058823529413" green="0.79607843137254897" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="315" id="63R-uZ-q52"/>
+                                    <constraint firstAttribute="width" secondItem="CsS-uv-Jhm" secondAttribute="height" multiplier="63:10" id="R7w-lP-W9G"/>
+                                    <constraint firstAttribute="height" constant="50" id="xAP-i2-mBk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Add Value">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addCash:" destination="bcO-vw-J6E" eventType="touchUpInside" id="iRh-2q-lsW"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uBU-Kx-SKh">
+                                <rect key="frame" x="31" y="319" width="107" height="29"/>
+                                <segments>
+                                    <segment title="Add"/>
+                                    <segment title="Spend"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZn-0e-i10">
+                                <rect key="frame" x="33.5" y="263" width="251.5" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="8rv-Fg-oXN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEp-b1-ljP">
                                 <rect key="frame" x="161" y="76" width="53" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
@@ -250,69 +289,48 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSS-Qb-R9G">
-                                <rect key="frame" x="0.0" y="269" width="375" height="128"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZn-0e-i10">
-                                        <rect key="frame" x="137.5" y="52" width="100" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="3aU-xo-1cz"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsS-uv-Jhm">
-                                        <rect key="frame" x="163" y="90" width="49" height="30"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Submit">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addCash:" destination="bcO-vw-J6E" eventType="touchUpInside" id="iRh-2q-lsW"/>
-                                        </connections>
-                                    </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uBU-Kx-SKh">
-                                        <rect key="frame" x="8" y="49" width="91" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="4eU-0m-DcV"/>
-                                            <constraint firstAttribute="height" constant="28" id="Mkl-e9-kIb"/>
-                                            <constraint firstAttribute="width" constant="91" id="bLS-6l-sSW"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="Add"/>
-                                            <segment title="Spend"/>
-                                        </segments>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MQ-V7-iHy" userLabel="Value Line View">
+                                <rect key="frame" x="34.5" y="291.5" width="250" height="1"/>
+                                <color key="backgroundColor" white="0.84529622400000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="CsS-uv-Jhm" secondAttribute="trailing" constant="163" id="G0W-jN-EWg"/>
-                                    <constraint firstAttribute="bottom" secondItem="CsS-uv-Jhm" secondAttribute="bottom" constant="8" id="GlS-sy-d6W"/>
-                                    <constraint firstAttribute="trailing" secondItem="uBU-Kx-SKh" secondAttribute="trailing" constant="276" id="V1c-mx-Uhv"/>
-                                    <constraint firstItem="CsS-uv-Jhm" firstAttribute="leading" secondItem="NSS-Qb-R9G" secondAttribute="leading" constant="163" id="Yzu-QQ-c5y"/>
-                                    <constraint firstItem="fZn-0e-i10" firstAttribute="centerY" secondItem="NSS-Qb-R9G" secondAttribute="centerY" id="aCr-vD-spa"/>
-                                    <constraint firstItem="CsS-uv-Jhm" firstAttribute="top" secondItem="NSS-Qb-R9G" secondAttribute="top" constant="90" id="jR1-IV-4dh"/>
-                                    <constraint firstItem="uBU-Kx-SKh" firstAttribute="leading" secondItem="NSS-Qb-R9G" secondAttribute="leading" constant="8" id="kwM-tu-yUD"/>
-                                    <constraint firstItem="uBU-Kx-SKh" firstAttribute="top" secondItem="NSS-Qb-R9G" secondAttribute="top" constant="49" id="l24-z3-k5j"/>
-                                    <constraint firstItem="fZn-0e-i10" firstAttribute="centerX" secondItem="NSS-Qb-R9G" secondAttribute="centerX" id="muc-w2-PNB"/>
-                                    <constraint firstAttribute="bottom" secondItem="uBU-Kx-SKh" secondAttribute="bottom" constant="51" id="zqH-sx-iLg"/>
+                                    <constraint firstAttribute="width" secondItem="4MQ-V7-iHy" secondAttribute="height" multiplier="250:1" id="Oht-oP-g0f"/>
+                                    <constraint firstAttribute="height" constant="1" id="sat-xx-qZx"/>
+                                    <constraint firstAttribute="width" constant="250" id="ySs-k4-T3v"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cashactions-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="qV2-rl-f46">
+                                <rect key="frame" x="6.5" y="53" width="62" height="100.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100.5" id="Kf2-58-IcR"/>
+                                    <constraint firstAttribute="width" secondItem="qV2-rl-f46" secondAttribute="height" multiplier="31:50" id="Qjt-Fq-ExL"/>
+                                    <constraint firstAttribute="width" constant="62" id="qvq-0e-1d1"/>
+                                </constraints>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCU-JD-zfV">
+                                <rect key="frame" x="27.5" y="441.5" width="320" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.97254901960784312" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NSS-Qb-R9G" firstAttribute="leading" secondItem="Rl7-d1-nnf" secondAttribute="leading" id="5wc-Qt-EYn"/>
-                            <constraint firstItem="Rl7-d1-nnf" firstAttribute="bottom" secondItem="NSS-Qb-R9G" secondAttribute="bottom" constant="270" id="5wn-EJ-BqU"/>
                             <constraint firstItem="DEp-b1-ljP" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.25" id="BJV-GQ-i9S"/>
+                            <constraint firstItem="CsS-uv-Jhm" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" id="HwX-YN-f5i"/>
+                            <constraint firstItem="fZn-0e-i10" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.8" id="IL7-db-pmF"/>
                             <constraint firstItem="PIO-ko-ibB" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.4" id="JfQ-fV-aN3"/>
                             <constraint firstItem="ksr-x3-H6E" firstAttribute="trailing" secondItem="Rl7-d1-nnf" secondAttribute="trailing" id="K2l-4l-S6L"/>
                             <constraint firstItem="PIO-ko-ibB" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" id="NBv-vx-f5u"/>
-                            <constraint firstItem="NSS-Qb-R9G" firstAttribute="trailing" secondItem="Rl7-d1-nnf" secondAttribute="trailing" id="XTZ-cW-G25"/>
+                            <constraint firstItem="qV2-rl-f46" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.3" id="Omm-Nr-eDq"/>
+                            <constraint firstItem="uBU-Kx-SKh" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="0.45" id="SoI-ZL-XQe"/>
+                            <constraint firstItem="qV2-rl-f46" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="0.2" id="Z0V-vc-kWi"/>
+                            <constraint firstItem="lCU-JD-zfV" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="1.6" id="ZhG-nZ-bpU"/>
+                            <constraint firstItem="lCU-JD-zfV" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" id="c3p-ox-BzV"/>
                             <constraint firstItem="ksr-x3-H6E" firstAttribute="leading" secondItem="Rl7-d1-nnf" secondAttribute="leading" id="cCa-35-Irh"/>
+                            <constraint firstItem="4MQ-V7-iHy" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.85" id="gaZ-Gk-f8E"/>
                             <constraint firstItem="ksr-x3-H6E" firstAttribute="top" secondItem="tL5-dW-LkJ" secondAttribute="top" id="hto-zK-fg6"/>
                             <constraint firstItem="DEp-b1-ljP" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" id="lPp-aS-F5s"/>
-                            <constraint firstItem="NSS-Qb-R9G" firstAttribute="top" secondItem="Rl7-d1-nnf" secondAttribute="top" constant="249" id="wYr-vB-GGT"/>
+                            <constraint firstItem="uBU-Kx-SKh" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.97" id="tOB-BW-z1l"/>
+                            <constraint firstItem="fZn-0e-i10" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="0.85" id="vCc-vP-MtE"/>
+                            <constraint firstItem="4MQ-V7-iHy" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="0.85" id="vTt-9M-Cmv"/>
+                            <constraint firstItem="CsS-uv-Jhm" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="1.15" id="xBA-AC-spA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rl7-d1-nnf"/>
                     </view>
@@ -321,7 +339,7 @@
                         <outlet property="cashButton" destination="CsS-uv-Jhm" id="dhH-Wh-0th"/>
                         <outlet property="cashTextField" destination="fZn-0e-i10" id="Lf8-25-cx3"/>
                         <outlet property="cashTypeControl" destination="uBU-Kx-SKh" id="LmC-im-7Da"/>
-                        <outlet property="cashView" destination="NSS-Qb-R9G" id="X4Y-aB-YNn"/>
+                        <outlet property="pickerView" destination="lCU-JD-zfV" id="WIn-OG-sPR"/>
                         <outlet property="priceLabel" destination="PIO-ko-ibB" id="Qpx-D0-ULO"/>
                         <outlet property="signOutButton" destination="gXP-BZ-lMy" id="g6G-hP-ut4"/>
                     </connections>
