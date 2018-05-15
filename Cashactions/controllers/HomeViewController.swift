@@ -11,10 +11,11 @@ import CoreData
 import FirebaseAuth
 import FirebaseDatabase
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var ref = Database.database().reference()
     var window:UIWindow?
-    let cashTypes = ["Bills", "Business", "Food and Drink", "Miscellaneous", "Other", "Shopping", "Travel"]
+    let cashTypes = ["Select Value Type", "Add or Withdraw Cash", "Bills", "Business", "Food and Drink", "Lose or Deposit Cash", "Miscellaneous", "Other", "Received Money", "Shopping", "Travel"]
+    var pickerType = ""
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var signOutButton: UIBarButtonItem!
@@ -42,7 +43,7 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func observeDB() {
+    func observeDB() { // all this does is updates balance
         let userID = Auth.auth().currentUser!.uid
         
         ref.child(userID).child("Balance/value").observe(.value, with: { snapshot in
@@ -52,51 +53,6 @@ class HomeViewController: UIViewController {
             self.priceLabel.text = "$" + String(price)
 //      update      ref.child("yourKey").child("yourKey").updateChildValues(["yourKey": yourValue])
         })
-    }
-    @IBAction func addCash(_ sender: UIButton) {
-        let userID = Auth.auth().currentUser!.uid
-        let email = Auth.auth().currentUser?.email
-        
-        formatter.dateFormat = "MM/dd/yyyy, H:mm:ss"
-        var timeString = formatter.string(from: Date())
-        var tValue = cashTextField.text!
-
-        var segType:String
-        var segFinal = ""
-        if self.cashTypeControl.selectedSegmentIndex == 0{
-            segType = "Add"
-            segFinal = segType
-        }
-        else{
-            segType = "Spend"
-            segFinal = segType
-        }
-        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            let pickerType = cashTypes[row]
-            let valueType = pickerType + ":" + tValue
-            let transaction = Transaction(value: Int(tValue)!, transactionType: segFinal, valueType: valueType, addedByUser: (email!), dateAdded: timeString)
-            let initialRef = self.ref.child(userID).child("transactions").child(cashTextField.text!)
-            initialRef.setValue(transaction.toAnyObject())
-            print(pickerType)
-            return
-        }
-        
-        ref.child(userID).child("Balance/value").observeSingleEvent(of: .value, with: { snapshot in
-            let price = snapshot.value as! Int
-            if self.cashTypeControl.selectedSegmentIndex == 0{
-                self.ref.child(userID).child("Balance/value").setValue(Int(price + Int(tValue)!))
-            }
-            else {
-                self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(tValue)!))
-            }
-            
-        })
-        
-        let alert = UIAlertController(title: "Cashactions", message: "Transaction added", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
-        
     }
     
     func checkStatus(){
@@ -120,8 +76,6 @@ class HomeViewController: UIViewController {
     }
     
     
-}
-extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -132,5 +86,54 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return cashTypes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(cashTypes[row])
+        pickerType = cashTypes[row]
+        return
+    }
+    
+    @IBAction func addCash(_ sender: UIButton) { // adds new cash
+        let userID = Auth.auth().currentUser!.uid
+        let email = Auth.auth().currentUser?.email
+        
+        var segType:String
+        var segFinal = ""
+        if self.cashTypeControl.selectedSegmentIndex == 0{
+            segType = "Add"
+            segFinal = segType
+        }
+        else{
+            segType = "Spend"
+            segFinal = segType
+        }
+        
+        formatter.dateFormat = "d MMM yyyy h:mm:ss"
+        var timeString = formatter.string(from: Date())
+        var tValue = cashTextField.text!
+        
+        let valueType = timeString + " " + pickerType
+        let transaction = Transaction(value: Int(tValue)!, transactionType: segFinal, valueType: pickerType, addedByUser: (email!), dateAdded: timeString)
+        let initialRef = self.ref.child(userID).child("transactions").child(valueType)
+        initialRef.setValue(transaction.toAnyObject())
+        
+        
+        ref.child(userID).child("Balance/value").observeSingleEvent(of: .value, with: { snapshot in
+            let price = snapshot.value as! Int
+            if self.cashTypeControl.selectedSegmentIndex == 0{
+                self.ref.child(userID).child("Balance/value").setValue(Int(price + Int(tValue)!))
+            }
+            else {
+                self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(tValue)!))
+            }
+            
+        })
+        
+        let alert = UIAlertController(title: "Cashactions", message: "Transaction added", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+        
     }
 }
