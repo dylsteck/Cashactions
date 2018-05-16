@@ -10,6 +10,7 @@
 		18D753677B9DFB3822D8681F /* Pods_Cashactions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4114D732ED685141537D52EF /* Pods_Cashactions.framework */; };
 		9AB103FC147B6AE036C42653 /* Pods_CashactionsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64C3927DE5B2713C13CDBE /* Pods_CashactionsUITests.framework */; };
 		CE93585ABC2D86854CFE19C5 /* Pods_CashactionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9841FC2D41A6D529BBECAA6 /* Pods_CashactionsTests.framework */; };
+		FC31EB5220ABC705003654ED /* TransactionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31EB5120ABC705003654ED /* TransactionsTVC.swift */; };
 		FC5E7BC32085973100C6EDC0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E7BC22085973100C6EDC0 /* Transaction.swift */; };
 		FC66416820A281910078FC65 /* Splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC66416720A281910078FC65 /* Splash.jpg */; };
 		FC76B8122079134500E2B1F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B80F2079134500E2B1F3 /* LoginViewController.swift */; };
@@ -58,6 +59,7 @@
 		AC4A512F1496ED93ECA5B0B9 /* Pods-Cashactions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashactions.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cashactions/Pods-Cashactions.release.xcconfig"; sourceTree = "<group>"; };
 		C9841FC2D41A6D529BBECAA6 /* Pods_CashactionsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashactionsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD64C3927DE5B2713C13CDBE /* Pods_CashactionsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashactionsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC31EB5120ABC705003654ED /* TransactionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTVC.swift; sourceTree = "<group>"; };
 		FC5E7BC22085973100C6EDC0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		FC66416720A281910078FC65 /* Splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Splash.jpg; sourceTree = "<group>"; };
 		FC76B80F2079134500E2B1F3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				FC76B8102079134500E2B1F3 /* HomeViewController.swift */,
 				FC76B8112079134500E2B1F3 /* InitialBalanceViewController.swift */,
 				FC76B80F2079134500E2B1F3 /* LoginViewController.swift */,
+				FC31EB5120ABC705003654ED /* TransactionsTVC.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 			files = (
 				FC76B8122079134500E2B1F3 /* LoginViewController.swift in Sources */,
 				FCC08E872065E5A700D8BE4F /* AppDelegate.swift in Sources */,
+				FC31EB5220ABC705003654ED /* TransactionsTVC.swift in Sources */,
 				FC5E7BC32085973100C6EDC0 /* Transaction.swift in Sources */,
 				FC76B8142079134500E2B1F3 /* InitialBalanceViewController.swift in Sources */,
 				FC76B8132079134500E2B1F3 /* HomeViewController.swift in Sources */,
