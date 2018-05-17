@@ -373,13 +373,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FlC-0R-Pfn">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ControllerCell" rowHeight="60" id="FlC-0R-Pfn" customClass="TableViewCellCA" customModule="Cashactions" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FlC-0R-Pfn" id="0M4-Cd-nzf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyJ-j9-gEi" userLabel="TVC Amount Label">
+                                            <rect key="frame" x="6" y="13" width="70" height="33"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                            <color key="textColor" red="0.94509803921568625" green="0.97254901960784312" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3w-qI-5fN" userLabel="TVC Type Label">
+                                            <rect key="frame" x="110" y="10" width="261" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Added:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJp-4v-upX">
+                                            <rect key="frame" x="6" y="47" width="365" height="11"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="8"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="iyJ-j9-gEi" secondAttribute="trailing" constant="299" id="4mY-f7-5cT"/>
+                                        <constraint firstAttribute="trailing" secondItem="W3w-qI-5fN" secondAttribute="trailing" constant="4" id="7J4-3S-tN4"/>
+                                        <constraint firstAttribute="bottom" secondItem="qJp-4v-upX" secondAttribute="bottom" constant="1.5" id="Hu9-ba-e3O"/>
+                                        <constraint firstItem="iyJ-j9-gEi" firstAttribute="top" secondItem="0M4-Cd-nzf" secondAttribute="top" constant="13" id="OEa-Cw-SPu"/>
+                                        <constraint firstAttribute="trailing" secondItem="qJp-4v-upX" secondAttribute="trailing" constant="4" id="P42-qT-FsI"/>
+                                        <constraint firstItem="qJp-4v-upX" firstAttribute="leading" secondItem="0M4-Cd-nzf" secondAttribute="leading" constant="6" id="PAZ-O1-G8r"/>
+                                        <constraint firstAttribute="bottom" secondItem="W3w-qI-5fN" secondAttribute="bottom" constant="26" id="WEv-6s-xV3"/>
+                                        <constraint firstAttribute="bottom" secondItem="iyJ-j9-gEi" secondAttribute="bottom" constant="13.5" id="Zz1-NV-1w2"/>
+                                        <constraint firstItem="W3w-qI-5fN" firstAttribute="top" secondItem="0M4-Cd-nzf" secondAttribute="top" constant="10" id="cuo-b4-ZOn"/>
+                                        <constraint firstItem="iyJ-j9-gEi" firstAttribute="leading" secondItem="0M4-Cd-nzf" secondAttribute="leading" constant="6" id="g0W-4a-XOb"/>
+                                        <constraint firstItem="qJp-4v-upX" firstAttribute="top" secondItem="0M4-Cd-nzf" secondAttribute="top" constant="47" id="gZy-ew-gFK"/>
+                                        <constraint firstItem="W3w-qI-5fN" firstAttribute="leading" secondItem="0M4-Cd-nzf" secondAttribute="leading" constant="110" id="wXe-Wx-51J"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tvcAmountLabel" destination="iyJ-j9-gEi" id="ogt-ev-Ygo"/>
+                                    <outlet property="tvcDateLabel" destination="qJp-4v-upX" id="a44-Va-nGS"/>
+                                    <outlet property="tvcTypeLabel" destination="W3w-qI-5fN" id="6JO-09-BNi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -392,7 +431,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlI-2n-J8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="34"/>
+            <point key="canvasLocation" x="2229.5999999999999" y="33.733133433283363"/>
         </scene>
     </scenes>
     <resources>

@@ -18,33 +18,59 @@ class TransactionsTVC: UITableViewController {
     var ref = Database.database().reference()
     var userID = Auth.auth().currentUser!.uid
     
-    func loadFirebase(){
-        ref.child(userID).child("transactions").queryOrderedByKey().observe(.childAdded) { (snapshot) in
-            for transaction in snapshot.children.allObjects as! [DataSnapshot] {
-                print(transaction.value)
-            }
-        }
-    }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
+    var values = [String]()
+    var types = [String]()
+    var dates = [String]()
     
+    override func viewDidLoad() {
+        loadFirebase()
+    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 3
+//    }
+//
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return values.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
-    }
-    
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Section \(section)"
+//    }
+//
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ControllerCell", for: indexPath) as! TableViewCellCA
         
-        cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
-        
+    //    cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        let row = indexPath.row
+        cell.tvcAmountLabel.text = "$" + self.values[row]
+        cell.tvcTypeLabel.text = self.types[row]
+        cell.tvcDateLabel.text = self.dates[row]
         return cell
     }
     
-    
+    func loadFirebase(){
+        ref.child(userID).child("transactions").observeSingleEvent(of: .value, with: { snapshot in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                // 1. turns all snapshot instances into a dictionary
+                for item in dictionary {
+                //2. parses all items in said dictionary
+                    let reference = item.value
+                    let referenceValue = reference["value"] as! Int
+                    print(referenceValue)
+                    self.values.append(String(referenceValue))
+                    
+                    let valueType = reference["valueType"] as! String
+                    let transactionType = reference["transactionType"] as! String
+                    
+                    self.types.append(transactionType + ": " + valueType)
+                    
+                    let date = reference["dateAdded"] as! String
+                    self.dates.append("Date Added: " + date)
+                //3. references ["value"] of that particular item
+                }
+            self.tableView.reloadData()
+            }
+        })
+        
+    }
 }
