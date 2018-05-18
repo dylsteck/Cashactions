@@ -323,6 +323,12 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, username@email.com !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-KM-6oz">
+                                <rect key="frame" x="20" y="177" width="298" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.97254901960784312" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -340,9 +346,11 @@
                             <constraint firstItem="lCU-JD-zfV" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="1.2" id="ZhG-nZ-bpU"/>
                             <constraint firstItem="lCU-JD-zfV" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" id="c3p-ox-BzV"/>
                             <constraint firstItem="ksr-x3-H6E" firstAttribute="leading" secondItem="Rl7-d1-nnf" secondAttribute="leading" id="cCa-35-Irh"/>
+                            <constraint firstItem="nRw-KM-6oz" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="0.9" id="gaS-Sg-Ubz"/>
                             <constraint firstItem="4MQ-V7-iHy" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.95" id="gaZ-Gk-f8E"/>
                             <constraint firstItem="ksr-x3-H6E" firstAttribute="top" secondItem="tL5-dW-LkJ" secondAttribute="top" id="hto-zK-fg6"/>
                             <constraint firstItem="DEp-b1-ljP" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" id="lPp-aS-F5s"/>
+                            <constraint firstItem="nRw-KM-6oz" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.55" id="qvp-JZ-jG4"/>
                             <constraint firstItem="uBU-Kx-SKh" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.9" id="tOB-BW-z1l"/>
                             <constraint firstItem="fZn-0e-i10" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="1.1" id="vCc-vP-MtE"/>
                             <constraint firstItem="4MQ-V7-iHy" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="1.1" id="vTt-9M-Cmv"/>
@@ -355,6 +363,7 @@
                         <outlet property="cashButton" destination="CsS-uv-Jhm" id="dhH-Wh-0th"/>
                         <outlet property="cashTextField" destination="fZn-0e-i10" id="Lf8-25-cx3"/>
                         <outlet property="cashTypeControl" destination="uBU-Kx-SKh" id="LmC-im-7Da"/>
+                        <outlet property="emailLabel" destination="nRw-KM-6oz" id="JAE-kB-TwP"/>
                         <outlet property="pickerView" destination="lCU-JD-zfV" id="WIn-OG-sPR"/>
                         <outlet property="priceLabel" destination="PIO-ko-ibB" id="Qpx-D0-ULO"/>
                         <outlet property="signOutButton" destination="gXP-BZ-lMy" id="g6G-hP-ut4"/>

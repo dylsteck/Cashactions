@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     let cashTypes = ["Select Value Type", "Add or Withdraw Cash", "Bills", "Business", "Food and Drink", "Lose or Deposit Cash", "Miscellaneous", "Other", "Received Money", "Shopping", "Travel"]
     var pickerType = ""
     
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var signOutButton: UIBarButtonItem!
     @IBOutlet weak var priceLabel: UILabel!
@@ -30,6 +31,8 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         observeDB()
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        emailLabel.text = "Welcome, " + (Auth.auth().currentUser?.email!)! + " !"
         // Do any additional setup after loading the view, typically from a nib.
     }
     
