@@ -50,11 +50,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let error = error { // if there's an error
                 print(error.localizedDescription)
+                
+                let alert = UIAlertController(title: "Error", message: "There has been an error. Please try again.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default)
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+                
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
             }
             else if let user = user{ // if there's no error
                 print("no error in sign up")
-                print(user.email)
-                print(user.uid)
+                print(user.user.uid)
+                print(user.user.email)
                 if let storyboard = self.storyboard {
                     let vc = storyboard.instantiateViewController(withIdentifier: "InitialBalance") as! UIViewController
                     self.present(vc, animated: false, completion: nil)
@@ -67,10 +75,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let error = error { // if there's an error
                 print(error.localizedDescription)
+                
+                let alert = UIAlertController(title: "Error", message: "Your email or password is incorrect. Please try again.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default)
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+                
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
             }
             else if let user = user{ // if there's no error
                 print("no error in log in")
-                print(user.email)
+                print(user.user.email)
                 if let storyboard = self.storyboard {
                     let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! UIViewController
                     self.present(vc, animated: false, completion: nil)
@@ -80,4 +96,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
 
+    @IBAction func resetPassword(_ sender: Any) {
+        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { (error) in
+            if let error = error{
+                let alert = UIAlertController(title: "Error", message: "There has been an error. Please try again.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default)
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+            }
+            else{
+                let alert = UIAlertController(title: "Done", message: "A password reset email was sent to " + self.emailTextField.text!, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default)
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+            }
+        }
+    }
 }

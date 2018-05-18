@@ -54,7 +54,6 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             let price = snapshot.value as! Int
             print(price)
             self.priceLabel.text = "$" + String(price)
-//      update      ref.child("yourKey").child("yourKey").updateChildValues(["yourKey": yourValue])
         })
     }
     
@@ -100,9 +99,9 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func addCash(_ sender: UIButton) { // adds new cash
         let userID = Auth.auth().currentUser!.uid
         let email = Auth.auth().currentUser?.email
-        
         var segType:String
         var segFinal = ""
+        
         if self.cashTypeControl.selectedSegmentIndex == 0{
             segType = "Add"
             segFinal = segType
@@ -115,28 +114,24 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         formatter.dateFormat = "d MMM yyyy h:mm:ss"
         var timeString = formatter.string(from: Date())
         var tValue = cashTextField.text!
-        
         let valueType = timeString + " " + pickerType
         let transaction = Transaction(value: Int(tValue)!, transactionType: segFinal, valueType: pickerType, addedByUser: (email!), dateAdded: timeString)
         let initialRef = self.ref.child(userID).child("transactions").child(valueType)
         initialRef.setValue(transaction.toAnyObject())
         
-        
-        ref.child(userID).child("Balance/value").observeSingleEvent(of: .value, with: { snapshot in
-            let price = snapshot.value as! Int
-            if self.cashTypeControl.selectedSegmentIndex == 0{
-                self.ref.child(userID).child("Balance/value").setValue(Int(price + Int(tValue)!))
-            }
-            else {
-                self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(tValue)!))
-            }
-            
-        })
-        
+            ref.child(userID).child("Balance/value").observeSingleEvent(of: .value, with: { snapshot in
+                let price = snapshot.value as! Int
+                if self.cashTypeControl.selectedSegmentIndex == 0{
+                    self.ref.child(userID).child("Balance/value").setValue(Int(price + Int(tValue)!))
+                }
+                else {
+                    self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(tValue)!))
+                }
+                
+            })
         let alert = UIAlertController(title: "Cashactions", message: "Transaction added", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
-        
     }
 }

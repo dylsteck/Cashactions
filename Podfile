@@ -6,10 +6,11 @@ target 'Cashactions' do
   use_frameworks!
 
   # Pods for Cashactions
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  # pod 'ReachabilitySwift', '~> 4.1'
+  
   target 'CashactionsTests' do
     inherit! :search_paths
     # Pods for testing
