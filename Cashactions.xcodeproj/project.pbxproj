@@ -22,6 +22,7 @@
 		FC99848D20A91A8800CE16E6 /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC99848A20A91A8600CE16E6 /* Avenir-Medium.ttf */; };
 		FC99848E20A91A8800CE16E6 /* Avenir-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC99848B20A91A8700CE16E6 /* Avenir-Black.ttf */; };
 		FC99848F20A91A8800CE16E6 /* Avenir-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC99848C20A91A8700CE16E6 /* Avenir-Book.ttf */; };
+		FC9F9FE820AF8CCF00315D88 /* 154.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9F9FE720AF8CCF00315D88 /* 154.png */; };
 		FCC08E872065E5A700D8BE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC08E862065E5A700D8BE4F /* AppDelegate.swift */; };
 		FCC08E8C2065E5A700D8BE4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC08E8A2065E5A700D8BE4F /* Main.storyboard */; };
 		FCC08E912065E5A700D8BE4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC08E902065E5A700D8BE4F /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		FC99848A20A91A8600CE16E6 /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
 		FC99848B20A91A8700CE16E6 /* Avenir-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Black.ttf"; sourceTree = "<group>"; };
 		FC99848C20A91A8700CE16E6 /* Avenir-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Book.ttf"; sourceTree = "<group>"; };
+		FC9F9FE720AF8CCF00315D88 /* 154.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 154.png; sourceTree = "<group>"; };
 		FCC08E832065E5A700D8BE4F /* Cashactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC08E862065E5A700D8BE4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC08E8B2065E5A700D8BE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				FC99848B20A91A8700CE16E6 /* Avenir-Black.ttf */,
 				FC99848C20A91A8700CE16E6 /* Avenir-Book.ttf */,
 				FC99848A20A91A8600CE16E6 /* Avenir-Medium.ttf */,
+				FC9F9FE720AF8CCF00315D88 /* 154.png */,
 				FC66416720A281910078FC65 /* Splash.jpg */,
 				FC99848520A8EF1900CE16E6 /* cashactions-icon.png */,
 			);
@@ -359,6 +362,7 @@
 			files = (
 				FCC08E942065E5A700D8BE4F /* LaunchScreen.storyboard in Resources */,
 				FC99848420A8BB9A00CE16E6 /* GoogleService-Info.plist in Resources */,
+				FC9F9FE820AF8CCF00315D88 /* 154.png in Resources */,
 				FC99848620A8EF1A00CE16E6 /* cashactions-icon.png in Resources */,
 				FCC08EC32065EC5B00D8BE4F /* icons8-cottage.png in Resources */,
 				FC99848E20A91A8800CE16E6 /* Avenir-Black.ttf in Resources */,
@@ -681,6 +685,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dylsteck.cashactionsiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
