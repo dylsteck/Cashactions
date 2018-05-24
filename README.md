@@ -1,2 +1,3 @@
 # Cashactions
-iOS app by @dylsteck to let users track cash transactions.
+### Keep track of your dough.
+iOS app by @dylsteck that allows users to keep track of their cash transactions
