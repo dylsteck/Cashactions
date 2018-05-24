@@ -55,7 +55,7 @@ class TransactionsTVC: UITableViewController {
                 for item in dictionary {
                 //2. parses all items in said dictionary
                     let reference = item.value
-                    let referenceValue = reference["value"] as! Int
+                    let referenceValue = reference["value"] as! Double
                     print(referenceValue)
                     self.values.append(String(referenceValue))
                     

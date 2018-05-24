@@ -5,7 +5,7 @@
 //  Created by Dylan Steck on 3/24/18.
 //  Copyright © 2018 Dylan Steck. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import CoreData
 import FirebaseAuth
@@ -45,13 +45,13 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func observeDB() { // all this does is updates balance
         let userID = Auth.auth().currentUser!.uid
         
         ref.child(userID).child("Balance/value").observe(.value, with: { snapshot in
             print(userID)
-            let price = snapshot.value as! Int
+            let price = snapshot.value as! Double
             print(price)
             self.priceLabel.text = "$" + String(price)
         })
@@ -115,17 +115,17 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         var timeString = formatter.string(from: Date())
         var tValue = cashTextField.text!
         let valueType = timeString + " " + pickerType
-        let transaction = Transaction(value: Int(tValue)!, transactionType: segFinal, valueType: pickerType, addedByUser: (email!), dateAdded: timeString)
+        let transaction = Transaction(value: Double(tValue)!, transactionType: segFinal, valueType: pickerType, addedByUser: (email!), dateAdded: timeString)
         let initialRef = self.ref.child(userID).child("transactions").child(valueType)
         initialRef.setValue(transaction.toAnyObject())
         
             ref.child(userID).child("Balance/value").observeSingleEvent(of: .value, with: { snapshot in
-                let price = snapshot.value as! Int
+                let price = snapshot.value as! Double
                 if self.cashTypeControl.selectedSegmentIndex == 0{
-                    self.ref.child(userID).child("Balance/value").setValue(Int(price + Int(tValue)!))
+                    self.ref.child(userID).child("Balance/value").setValue(Double(price + Double(tValue)!))
                 }
                 else {
-                    self.ref.child(userID).child("Balance/value").setValue(Int(price - Int(tValue)!))
+                    self.ref.child(userID).child("Balance/value").setValue(Double(price - Double(tValue)!))
                 }
                 
             })

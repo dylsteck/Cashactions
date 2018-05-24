@@ -49,11 +49,11 @@ class InitialBalanceViewController: UIViewController, UITextFieldDelegate {
         formatter.dateFormat = "MM/dd/yyyy, H:mm:ss"
         var timeString = formatter.string(from: Date())
         
-        let transaction = Transaction(value: Int(tValue)!, transactionType: "Add", valueType: "Initial Transaction", addedByUser: (email!), dateAdded: timeString )
+        let transaction = Transaction(value: Double(tValue)!, transactionType: "Add", valueType: "Initial Transaction", addedByUser: (email!), dateAdded: timeString )
         let initialRef = self.ref.child(userID).child("transactions").child("Initial Transaction")
         initialRef.setValue(transaction.toAnyObject())
         
-        let balance = Transaction(value: Int(tValue)!, transactionType: "Add", valueType: "Balance: $" + tValue, addedByUser: (email!), dateAdded: timeString)
+        let balance = Transaction(value: Double(tValue)!, transactionType: "Add", valueType: "Balance: $" + tValue, addedByUser: (email!), dateAdded: timeString)
         let balanceRef = self.ref.child(userID).child("Balance")
         balanceRef.setValue(transaction.toAnyObject())
         

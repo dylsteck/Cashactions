@@ -13,14 +13,14 @@ struct Transaction {
     
     
 //    let key: String
-    let value: Int
+    let value: Double
     let addedByUser: String
     let transactionType: String
     let ref: DatabaseReference?
     let valueType: String
     let dateAdded: String
     
-    init(value: Int, transactionType: String, valueType: String, addedByUser: String, dateAdded: String) {
+    init(value: Double, transactionType: String, valueType: String, addedByUser: String, dateAdded: String) {
 //      self.key = key
         self.value = value
         self.addedByUser = addedByUser
@@ -33,7 +33,7 @@ struct Transaction {
     init(snapshot: DataSnapshot) {
 //        key = snapshot.key
         let snapshotValue = snapshot.value as! [String: AnyObject]
-        value = snapshotValue["value"] as! Int
+        value = snapshotValue["value"] as! Double
         addedByUser = snapshotValue["addedByUser"] as! String
         ref = snapshot.ref
         valueType = snapshotValue["valueType"] as! String
