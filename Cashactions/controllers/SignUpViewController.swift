@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  SignUpViewController.swift
 //  Cashactions
 //
-//  Created by Dylan Steck on 3/23/18.
+//  Created by Dylan Steck on 5/23/18.
 //  Copyright © 2018 Dylan Steck. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
@@ -20,6 +20,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.tag = 0 //Increment accordingly
         passwordTextField.delegate = self as! UITextFieldDelegate
         passwordTextField.tag = 1
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         //Exits keyboard when user taps away
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         // Try to find next responder
@@ -46,13 +47,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // this function goes to next keyboard(email to password etc)
     }
     
-    
-    @IBAction func logIn(_ sender: Any) {
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+    @IBAction func signUp(_ sender: Any) {
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let error = error { // if there's an error
                 print(error.localizedDescription)
                 
-                let alert = UIAlertController(title: "Error", message: "Your email or password is incorrect. Please try again.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "There has been an error. Please try again.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ok", style: .default)
                 alert.addAction(okAction)
                 self.present(alert, animated: true)
@@ -61,31 +61,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.passwordTextField.text = ""
             }
             else if let user = user{ // if there's no error
-                print("no error in log in")
+                print("no error in sign up")
+                print(user.user.uid)
                 print(user.user.email)
                 if let storyboard = self.storyboard {
-                    let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! UIViewController
+                    let vc = storyboard.instantiateViewController(withIdentifier: "InitialBalance") as! UIViewController
                     self.present(vc, animated: false, completion: nil)
                 }
             }
         }
-        
     }
+    
+    /*
+    // MARK: - Navigation
 
-    @IBAction func resetPassword(_ sender: Any) {
-        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { (error) in
-            if let error = error{
-                let alert = UIAlertController(title: "Error", message: "There has been an error. Please try again.", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default)
-                alert.addAction(okAction)
-                self.present(alert, animated: true)
-            }
-            else{
-                let alert = UIAlertController(title: "Done", message: "A password reset email was sent to " + self.emailTextField.text!, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default)
-                alert.addAction(okAction)
-                self.present(alert, animated: true)
-            }
-        }
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }
