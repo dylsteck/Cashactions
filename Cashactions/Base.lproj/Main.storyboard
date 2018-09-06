@@ -15,7 +15,7 @@
         <scene sceneID="KsQ-By-8j8">
             <objects>
                 <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Af-uR-KbT" customClass="LoginViewController" customModule="Cashactions" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bfv-b6-dtH">
+                    <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="Bfv-b6-dtH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -348,7 +348,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsS-uv-Jhm">
-                                <rect key="frame" x="30" y="612.66666666666663" width="315" height="50"/>
+                                <rect key="frame" x="30" y="653" width="315" height="50"/>
                                 <color key="backgroundColor" red="0.77647058823529413" green="0.79607843137254897" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
@@ -371,26 +371,26 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uBU-Kx-SKh">
-                                <rect key="frame" x="12" y="372.66666666666669" width="107" height="29"/>
+                                <rect key="frame" x="12" y="397" width="107" height="29"/>
                                 <segments>
                                     <segment title="Add"/>
                                     <segment title="Spend"/>
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEp-b1-ljP">
-                                <rect key="frame" x="161" y="125.00000000000001" width="53" height="20.666666666666671"/>
+                                <rect key="frame" x="161" y="133.66666666666666" width="53" height="20.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIO-ko-ibB">
-                                <rect key="frame" x="169.66666666666666" y="153.33333333333334" width="36" height="41"/>
+                                <rect key="frame" x="169.66666666666666" y="164.33333333333334" width="36" height="41"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MQ-V7-iHy" userLabel="Value Line View">
-                                <rect key="frame" x="141.33333333333334" y="405.33333333333331" width="130.00000000000003" height="1"/>
+                                <rect key="frame" x="141.33333333333334" y="431" width="130.00000000000003" height="1"/>
                                 <color key="backgroundColor" white="0.84529622400000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4MQ-V7-iHy" secondAttribute="height" multiplier="130:1" id="Oht-oP-g0f"/>
@@ -399,7 +399,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cashactions-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="qV2-rl-f46">
-                                <rect key="frame" x="6.6666666666666643" y="104.33333333333331" width="61.999999999999993" height="100.66666666666669"/>
+                                <rect key="frame" x="6.6666666666666643" y="114" width="61.999999999999993" height="100.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100.5" id="Kf2-58-IcR"/>
                                     <constraint firstAttribute="width" secondItem="qV2-rl-f46" secondAttribute="height" multiplier="31:50" id="Qjt-Fq-ExL"/>
@@ -407,19 +407,19 @@
                                 </constraints>
                             </imageView>
                             <pickerView contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCU-JD-zfV">
-                                <rect key="frame" x="27.666666666666657" y="452.33333333333331" width="320" height="99.999999999999943"/>
+                                <rect key="frame" x="27.666666666666657" y="484.33333333333326" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="iGe-Fb-Oza"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new transaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVm-3V-7RY">
-                                <rect key="frame" x="18" y="288.66666666666669" width="320" height="41"/>
+                                <rect key="frame" x="18" y="308.33333333333331" width="320" height="41"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZn-0e-i10">
-                                <rect key="frame" x="141.33333333333334" y="374.66666666666669" width="130.00000000000003" height="24"/>
+                                <rect key="frame" x="141.33333333333334" y="399" width="130.00000000000003" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="GwI-5h-j74"/>
                                 </constraints>
@@ -428,13 +428,13 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back, username@email.com !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-KM-6oz">
-                                <rect key="frame" x="19.666666666666657" y="239.33333333333334" width="298" height="24.000000000000028"/>
+                                <rect key="frame" x="19.666666666666657" y="255" width="298" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksr-x3-H6E">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                 </textAttributes>
@@ -470,13 +470,13 @@
                             <constraint firstItem="qV2-rl-f46" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.4" id="Omm-Nr-eDq"/>
                             <constraint firstItem="uBU-Kx-SKh" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="0.35" id="SoI-ZL-XQe"/>
                             <constraint firstItem="ksr-x3-H6E" firstAttribute="leading" secondItem="tL5-dW-LkJ" secondAttribute="leading" id="VMN-yI-EFN"/>
-                            <constraint firstAttribute="trailing" secondItem="ksr-x3-H6E" secondAttribute="trailing" id="Xt2-L9-8KJ"/>
+                            <constraint firstItem="Rl7-d1-nnf" firstAttribute="trailing" secondItem="ksr-x3-H6E" secondAttribute="trailing" id="Xt2-L9-8KJ"/>
                             <constraint firstItem="qV2-rl-f46" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="0.2" id="Z0V-vc-kWi"/>
                             <constraint firstItem="lCU-JD-zfV" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="1.3" id="ZhG-nZ-bpU"/>
                             <constraint firstItem="lCU-JD-zfV" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" id="c3p-ox-BzV"/>
                             <constraint firstItem="nRw-KM-6oz" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" multiplier="0.9" id="gaS-Sg-Ubz"/>
                             <constraint firstItem="4MQ-V7-iHy" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="1.05" id="gaZ-Gk-f8E"/>
-                            <constraint firstItem="ksr-x3-H6E" firstAttribute="top" secondItem="tL5-dW-LkJ" secondAttribute="top" id="kRd-Vg-lzt"/>
+                            <constraint firstItem="ksr-x3-H6E" firstAttribute="top" secondItem="Rl7-d1-nnf" secondAttribute="top" id="kRd-Vg-lzt"/>
                             <constraint firstItem="DEp-b1-ljP" firstAttribute="centerX" secondItem="Rl7-d1-nnf" secondAttribute="centerX" id="lPp-aS-F5s"/>
                             <constraint firstItem="nRw-KM-6oz" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" multiplier="0.65" id="qvp-JZ-jG4"/>
                             <constraint firstItem="uBU-Kx-SKh" firstAttribute="centerY" secondItem="Rl7-d1-nnf" secondAttribute="centerY" id="tOB-BW-z1l"/>
@@ -591,7 +591,6 @@
         <image name="cashactions-icon.png" width="216" height="348"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vRt-sh-M7j"/>
-        <segue reference="cnh-gu-1P5"/>
+        <segue reference="4r4-28-ayH"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,10 +23,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4Pv-ai-zYI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HVq-2f-ZGt"/>
+                            <constraint firstItem="4Pv-ai-zYI" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="HVq-2f-ZGt"/>
                             <constraint firstItem="4Pv-ai-zYI" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="N0q-WS-6J8"/>
-                            <constraint firstItem="4Pv-ai-zYI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WBn-9V-84R"/>
-                            <constraint firstItem="4Pv-ai-zYI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qGg-XW-47y"/>
+                            <constraint firstItem="4Pv-ai-zYI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="WBn-9V-84R"/>
+                            <constraint firstItem="4Pv-ai-zYI" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="qGg-XW-47y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
